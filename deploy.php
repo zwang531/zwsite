@@ -1,13 +1,5 @@
 <?php
-	/**
-	 * GIT DEPLOYMENT SCRIPT
-	 *
-	 * Used for automatically deploying websites via github or bitbucket, more deets here:
-	 *
-	 *		https://gist.github.com/1809044
-	 */
 
-	// The commands
 	$commands = array(
 		'echo $PWD',
 		'whoami',
@@ -18,7 +10,6 @@
 		'git submodule status',
 	);
 
-	// Run the commands for output
 	$output = '';
 	foreach($commands AS $command){
 		// Run it
@@ -28,7 +19,6 @@
 		$output .= htmlentities(trim($tmp)) . "\n";
 	}
 
-	// Make it pretty for manual user access (and why not?)
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -41,7 +31,7 @@
  .  ____  .    ____________________________
  |/      \|   |                            |
 [| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git Deployment Script v0.1 |
- |___==___|  /              &copy; oodavid 2012 |
+ |___==___|  /              &copy; zwsite 2016 |
               |____________________________|
 
 <?php echo $output; ?>
