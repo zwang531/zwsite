@@ -1,5 +1,3 @@
-ed and is available at [yoursite].com/deploy.php
-
 <?php
     /**
      * GIT DEPLOYMENT SCRIPT
