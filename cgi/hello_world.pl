@@ -10,7 +10,7 @@ my $color = "yellow";
 
 if($val == 0){
     $color = "red";
-}elsif($val = 1){
+}elsif($val == 1){
     $color = "white";
 }else{
     $color = "blue";
