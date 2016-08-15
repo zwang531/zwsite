@@ -21,9 +21,7 @@
         <h1 style="color: white;">Oops! Not Found</h1>
     </header>
     <p>Sorry, we can't find the page you are looking for...</p>
-    <nav>
-        <ul><li><a href="/index.html">home</a></ul>
-    </nav>
+    <hr><ul style="font-style: italic;"><li><a href="/index.html">home</a></ul>
 </body>
     
 </html>
