@@ -17,3 +17,15 @@ RewriteRule ^ %{REQUEST_FILENAME}.html [L]
 <IfModule mod_deflate.c>
 AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
 </IfModule>
+
+SetEnvIf Request_URI "\deploy.php$" noauth=1
+AuthType Basic
+AuthName "Restricted Content"
+AuthUserFile /etc/apache2/.htpasswd
+Require valid-user
+
+Order deny,allow
+Satisfy any
+Deny from all
+Require valid-user
+Allow from env=noauth
