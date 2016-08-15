@@ -4,8 +4,8 @@ my ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst) = localtime(tim
 my @months = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
 my @days = qw(Sunday Monday Tuesday Wednesday Thursday Friday Saturday);
 
-my $yr = $year + 1990;
-my $range = 2;
+my $yr = $year + 1900;
+my $range = 3;
 my $val = int(rand($range));
 my $color = "yellow";
 
