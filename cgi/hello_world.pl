@@ -1,5 +1,4 @@
 #!/usr/bin/perl -wT
-use Switch;
 
 my ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst) = localtime(time);
 my @months = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
@@ -9,11 +8,12 @@ my $range = 2;
 my $val = int(rand($range));
 my $color = "yellow";
 
-switch($val){
-    case 0 {$color = "red"}
-    case 1 {$color = "white"}
-    case 2 {$color = "blue"}
-    else {}
+if($val == 0){
+    $color = "red";
+}elsif($val = 1){
+    $color = "white";
+}else{
+    $color = "blue";
 }
 
 print "Content-type: text/html\n\n";
