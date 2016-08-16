@@ -18,7 +18,7 @@ print <<END;
 END
 
 foreach my $val (sort keys %ENV){
-    printf "%s = \"%s\"<br>", $val, $ENV{$var};
+    printf "%s = \"%s\"<br>", $val, $ENV{$val};
 }
 print <<END;
 <hr><p style="font-style: italic;"><a href="/index.html">Back to home</a></p>
