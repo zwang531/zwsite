@@ -17,8 +17,8 @@ print <<END;
 <body><header><h1>Environment Variables</h1></header><br>
 END
 
-foreach $var (sort keys %ENV){
-    printf "%s = \"%s\"<br>", $var, $ENV{$var};
+foreach my $val (sort keys %ENV){
+    printf "%s = \"%s\"<br>", $val, $ENV{$var};
 }
 print <<END;
 <hr><p style="font-style: italic;"><a href="/index.html">Back to home</a></p>
