@@ -19,7 +19,7 @@ if($val == 0){
 }
 
 print "Content-type: text/html\n\n";
-print "<html><head><title>Hello World</title>";
+print "<!DOCTYPE html>\n<html>\n<head><title>Hello World</title>";
 print "</head><body bgcolor='$color'>\n";
 print "<h1>Hello Web World from Language Perl on $days[$wday], $months[$mon] $mday, $yr</h1>\n";
 print "</body>\n</html>";
