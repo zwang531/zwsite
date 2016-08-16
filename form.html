@@ -14,20 +14,28 @@
 </head>
 <body>
     <header><h1>Form Collection</h1></header><br>
-    <div><form action="#" method="get">
+    <div><form action="#" id="myFrom">
         First Name:<br><input type="text" name="firstName" id="firstName"><br><br>
         Last Name:<br><input type="text" name="lastName" id="lastName"><br><br>
         Favorite Color: 
         <select name="colors">
+            <option value=""></option>
             <option value="red">Red</option>
             <option value="white">White</option>
             <option value="blue">Blue</option>
         </select><br><br>
-        Method: <select name="method">
+        Method: <select name="method" onchange="selectMethod()">
+            <option value=""></option>
             <option value="GET">GET</option>
             <option value="POST">POST</option>
         </select><br><br>
-        <input type="submit" style="float: left">
+        <input type="submit" value="Submit" style="float: left">
     </form></div>
+    <script>
+        function selectMethod(){
+            var selAct = document.getElementsByName("method").value;
+            document.getElementById("myForm").setAttribute(name, selAct);
+        }
+    </script>
 </body>
 </html>
