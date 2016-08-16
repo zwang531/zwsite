@@ -1,15 +1,19 @@
 #!/usr/bin/perl -wT
-use strict;
+use warnings;
 use CGI qw(:standard); 
 
-print header;
+my ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst) = localtime(time);
+my @months = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
+my @days = qw(Sunday Monday Tuesday Wednesday Thursday Friday Saturday);
 
-my $fName = param('firstName');
-my $lName = param('lastName');
-my $color = param('color');
-
-if ($ENV{'REQUEST_METHOD'} eq 'POST'){
-
-}else{
-
+if(param()){
+   my $fname = param('firstName');
+   my $lname = param('lastName');
+   my $color = param('color');
 }
+
+print header('text/html'),
+      start_html('Welcome'),
+      body(-BGCOLOR=>"$color"),
+      h1("Hello $fname $lname from a Web app written in Perl on $days[$wday], $months[$mon] $mday, $yr"),
+      end_html;

@@ -14,18 +14,16 @@
 </head>
 <body>
     <header><h1>Form Collection</h1></header><br>
-    <form action="echo" id="myForm">
+    <form action="/cgi-bin/form.cgi" id="myForm">
         First Name:<br><input type="text" name="firstName" id="firstName"><br><br>
         Last Name:<br><input type="text" name="lastName" id="lastName"><br><br>
         Favorite Color: 
         <select name="color">
-            <option value=""></option>
             <option value="red">Red</option>
             <option value="white">White</option>
             <option value="blue">Blue</option>
         </select><br><br>
         Method: <select id="mySelect" onchange="selectMethod()">
-            <option value="">
             <option value="GET">GET
             <option value="POST">POST
         </select><br><br>
