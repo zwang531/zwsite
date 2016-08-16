@@ -13,7 +13,7 @@ if(param()){
 }
 
 print "Content-type: text/html\n\n";
-print "<!DOCTYPE html>\n<html>\n<head><title>Hello World</title>";
+print "<!DOCTYPE html>\n<html>\n<head><title>Echo</title>";
 print "</head><body bgcolor='$color'>\n";
 print "<h1>Hello dear $fname $lname,<br>greeting from a Web app written in Perl on $days[$wday], $months[$mon] $mday, $yr</h1>\n";
 print "</body>\n</html>";
