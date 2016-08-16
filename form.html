@@ -14,7 +14,7 @@
 </head>
 <body>
     <header><h1>Form Collection</h1></header><br>
-    <div><form action="#" id="myFrom">
+    <div><form action="echo" id="myFrom">
         First Name:<br><input type="text" name="firstName" id="firstName"><br><br>
         Last Name:<br><input type="text" name="lastName" id="lastName"><br><br>
         Favorite Color: 
@@ -34,7 +34,7 @@
     <script>
         function selectMethod(){
             var selAct = document.getElementsByName("method").value;
-            document.getElementById("myForm").setAttribute(name, selAct);
+            document.getElementById("myForm").setAttribute("method", selAct);
         }
     </script>
 </body>

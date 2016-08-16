@@ -1,4 +1,11 @@
 #!/usr/bin/perl -wT
 use strict;
+use CGI qw(:standard); 
 
-print "Content-type: text/html\n\n";
+print header;
+
+if ($ENV{'REQUEST_METHOD'} eq 'POST'){
+
+}else{
+
+}
