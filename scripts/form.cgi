@@ -12,9 +12,8 @@ if(param()){
    $color = param('color');
 }
 
-print header('text/html'),
-      start_html('Welcome'),
-      body(-BGCOLOR=>"$color"),
-      h1("Hello $fname $lname from a Web app written in Perl on $days[$wday], $months[$mon] $mday, $yr"),
-      end_html;
-      
+print "Content-type: text/html\n\n";
+print "<!DOCTYPE html>\n<html>\n<head><title>Hello World</title>";
+print "</head><body bgcolor='$color'>\n";
+print "<h1>Hello $lname, $fname from a Web app written in Perl on $days[$wday], $months[$mon] $mday, $yr</h1>\n";
+print "</body>\n</html>";
