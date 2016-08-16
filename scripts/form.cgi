@@ -7,9 +7,9 @@ my @months = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
 my @days = qw(Sunday Monday Tuesday Wednesday Thursday Friday Saturday);
 
 if(param()){
-   my $fname = param('firstName');
-   my $lname = param('lastName');
-   my $color = param('color');
+   $fname = param('firstName');
+   $lname = param('lastName');
+   $color = param('color');
 }
 
 print header('text/html'),
@@ -17,3 +17,4 @@ print header('text/html'),
       body(-BGCOLOR=>"$color"),
       h1("Hello $fname $lname from a Web app written in Perl on $days[$wday], $months[$mon] $mday, $yr"),
       end_html;
+      
