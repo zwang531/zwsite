@@ -10,8 +10,9 @@ print '<br>';
 print submit('submit','Confirm');
 
 my $val = param('name');
+print 'haha'+$val;
 my $cookie = cookie(-name=>'1',
 			        -value=>$val);
                     
-print header(-cookie=>$cookie);
+#print header(-cookie=>$cookie);
 print end_html;
