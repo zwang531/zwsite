@@ -18,7 +18,7 @@
 
 	print("<body bgcolor='$color'>\n");
 	$date = date('Y/m/d H:i:s');
-	print("Hello Web World from PHP on " . $date);
-	print("</body>\n");
+	print("<h1>Hello Web World from PHP on " . $date);
+	print("</h1></body>\n");
     </script>
 </html>
