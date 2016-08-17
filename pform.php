@@ -6,7 +6,7 @@ echo "    <meta charset=\"utf-8\">\n";
 echo "    <title>Form Collection</title>\n"; 
 echo "</head>\n"; 
 echo "<body>\n"; 
-echo "    <form action=\"/echo.php\" id=\"myForm\">\n"; 
+echo "    <form action=\"/pecho.php\" id=\"myForm\">\n"; 
 echo "        First Name:<br><input type=\"text\" name=\"firstName\" id=\"firstName\"><br><br>\n"; 
 echo "        Last Name:<br><input type=\"text\" name=\"lastName\" id=\"lastName\"><br><br>\n"; 
 echo "        Favorite Color: \n"; 
