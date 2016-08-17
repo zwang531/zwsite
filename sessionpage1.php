@@ -24,9 +24,10 @@
     <header><h1>session 1</h1></header><br>
     <form action="sessionpage1.php" method="get">
         Enter username: <input type="text" name="username" id="username">
-        <br><input type="submit" value="save session" name="Submit">
+        <br><br><input type="submit" value="save session" name="Submit">
     </form><br>
-    <a href="/sessionpage2.php">Go to session 2</a>
+    <a href="/sessionpage2.php">Go to session 2</a><br>
+    <a href="/index.html">Back to home</a>
 
 </body>
 </html>
