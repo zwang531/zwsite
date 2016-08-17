@@ -27,7 +27,7 @@
     </script>
     <br>
     <form action="/kill_session.php" method="post"><br>
-	<input type = "Submit" Name = "Submit1" value = "Clear Session">
+	<input type = "Submit" Name = "Submit" value = "Clear Session">
     </form>
     <br>
     <a href="/sessionpage1.php">Go to session 1</a><br>
