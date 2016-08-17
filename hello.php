@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>hello.php</title>
    </head>
-
-   <script language="php">
+<body>
+<?php
     $z=(integer)mt_rand(1,3);
 
     $color='red';
@@ -20,5 +20,6 @@
     $date = date('Y/m/d H:i:s');
     print("Hello Web World from PHP on " . $date);
     print("</body>\n");
-   </script>
+?>
+</body>
 </html>
