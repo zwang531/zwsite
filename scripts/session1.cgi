@@ -5,10 +5,11 @@ use CGI qw(:standard);
 print header('text/html');
 print start_html(-title=>'Session 1');
 print 'Enter your name: ';
-print textfield('username', '', 50, 100);
+print textfield('name', '', 50, 100);
 
+my $val = param('name');
 my $cookie = cookie(-name=>'1',
-			        -value=>param('username'));
+			        -value=>$val);
                     
 print header(-cookie=>$cookie);
 print end_html;
