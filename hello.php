@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-   <head>
-    <meta charset="utf-8">
-    <title>Hello World</title>
-   </head>
-
-   <script language="php">
+<head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+</head>
+<body>
+<?php
     $ran=mt_rand(1,3);
 
     $color='red';
@@ -16,9 +16,9 @@
     else
         $color='white';
 
-    print("<body bgcolor='$color'>\n");
+    echo "<body bgcolor='$color'>\n";
     $date = date('Y/m/d H:i:s');
-    print("Hello Web World from PHP on " . $date);
-    print("</body>\n");
-   </script>
+    echo "Hello Web World from PHP on $date\n";
+?>
+</body>
 </html>
