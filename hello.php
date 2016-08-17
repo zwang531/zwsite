@@ -6,12 +6,12 @@
    </head>
 
    <script language="php">
-    $ran=rand(1,3);
+    $ranx=rand(1,3);
 
     $color='red';
-    if($ran==1)
+    if($ranx==1)
         $color='red';
-    elseif($ran==2)
+    elseif($ranx==2)
         $color='blue';
     else
         $color='white';
