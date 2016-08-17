@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -6,12 +7,12 @@
    </head>
 
    <script language="php">
-    $ranx=rand(1,3);
+    $ran=(integer)mt_rand(1,3);
 
     $color='red';
-    if($ranx==1)
+    if($ran==1)
         $color='red';
-    elseif($ranx==2)
+    elseif($ran==2)
         $color='blue';
     else
         $color='white';
