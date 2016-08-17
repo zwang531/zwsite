@@ -12,4 +12,4 @@ if($name eq ''){
     print "<h1>Hi $name nice to meet you!</h1>";
 }
 print button('delete','Clear Session');
-print '<hr><a href="/session.html">Go Back</a>\n</body>\n</html>';
+print '<hr><p style="font-style: italic;"><a href="/session.html">Go Back</a></p></body>\n</html>';
