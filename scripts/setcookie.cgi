@@ -2,8 +2,7 @@
 use warnings;
 use CGI qw(:standard); 
 
-my $val = param('name');
-my $cookie = cookie(-name=>'session1', -value=>$val);
+$cookie = cookie(-name=>'session1', -value=>[param('username')]);
 
 print header(-cookie=>$cookie);
 print start_html(-title=>'Session 1');
