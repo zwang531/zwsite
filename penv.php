@@ -7,9 +7,9 @@
 
     <body>
 	<script language="php">
-	    print("<pre>\n");
-	    print_r($_SERVER);
-	    print("</pre>\n");
+	    foreach($_SERVER as $key_name=>$key_value){
+            print $key_name . " = " . $key_value . "<br>";
+        }
 	</script>
     </body>
 </html>
