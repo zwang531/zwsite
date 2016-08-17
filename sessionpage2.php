@@ -26,11 +26,11 @@
 	}
     </script>
     <br>
-    <form action="/kill_session.php" method="post">
+    <form action="/kill_session.php" method="post"><br>
 	<input type = "Submit" Name = "Submit1" value = "Clear Session">
     </form>
     <br>
-    <a href="/page1.php">Go to session 1</a>
+    <a href="/sessionpage1.php">Go to session 1</a>
 
     
 </body>
