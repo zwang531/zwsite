@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
-<body>
+    <head>
+	<meta charset="utf-8">
+	<title>hello.php</title>
+    </head>
 
-<?php 
-$x = "Hello world!";
-$y = 'Hello world!';
+    <script language="php">
+	$ran=mt_rand(1,3);
 
-echo $x;
-echo "<br>"; 
-echo $y;
-?>
+	$color='red';
+	if($ran==1)
+	    $color='red';
+	elseif($ran==2)
+	    $color='blue';
+	else
+	    $color='white';
 
-</body>
+	print("<body bgcolor='$color'>\n");
+	$date = date('Y/m/d H:i:s');
+	print("Hello Web World from PHP on " . $date);
+	print("</body>\n");
+    </script>
 </html>
