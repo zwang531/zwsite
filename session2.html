@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session 2</title>
+    <script>
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function checkCookie(){
+            var user = getCookie("session");
+            if (user != "") {
+                document.getElementById("output").innerHTML = "Hi " + user + " nice to meet you!";
+            } else {
+                document.getElementById("output").innerHTML = "Howdy stranger... tell me your name on page1!";
+            }
+        }
+        function deleteCookie() {
+            var user = getCookie("session");
+            if (user != "") {
+                document.cookie = "session"+"=; expires=-1d";
+            }
+        }
+    </script>
+</head>
+<body onload="checkCookie()">
+    <h1 id="output"></h1>
+    <button onclick="deleteCookie()">Clear Session</button>
+    <br><p style="font-style: italic;"><a href="/session1.html">Go Back</a></p>
+</body>
+</html>
