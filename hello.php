@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
    <head>
@@ -7,12 +6,12 @@
    </head>
 
    <script language="php">
-    $ran=(integer)mt_rand(1,3);
+    $z=(integer)mt_rand(1,3);
 
     $color='red';
-    if($ran==1)
+    if($z==1)
         $color='red';
-    elseif($ran==2)
+    else if($z==2)
         $color='blue';
     else
         $color='white';
