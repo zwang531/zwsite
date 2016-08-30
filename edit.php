@@ -1,6 +1,6 @@
 <?php
 
- $action = $_REQUEST['action'];
+ $action = $_POST['action'];
 
  
  $poster = '';
@@ -12,7 +12,7 @@
  
  if ($action == "Update") {
    
-    $id = $_REQUEST['id'];
+    $id = $_POST['id'];
      
     define('DB_USER','root');
     define('DB_PASSWORD','1234');
