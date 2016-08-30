@@ -5,11 +5,12 @@
 <title>CRUD</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    
 </head>
 <body>
 
-<div class="container">
+<div class="container" id="main">
 	
 <h1>Box Office</h1>
 
@@ -33,18 +34,17 @@
     
     // USE THE QUERY RESULT
     print "<table class='table'>";
-    print "<tr><th>Poster</th><th>Movie Title</th><th>Studio</th><th>Year</th><th>Box Office $</th><th></th></tr>";   
+    print "<tr><th>Movie Title</th><th>Studio</th><th>Year</th><th>Box Office $</th><th></th></tr>";   
     
     if (mysqli_num_rows($result) > 0) {
     
     
       while($row = mysqli_fetch_assoc($result)) {
 	    print "<tr>";
-	    print "<td style=\"text-align:center\"><img src=\"". $row['poster'] . "\" alt=\"Poster\" width=60, height=90></td>" ;
-	    print "<td style=\"text-align:center\">". $row['movie_title'] . "</td>" ;
-	    print "<td style=\"text-align:center\">". $row['studio_name'] . "</td>" ;
-	    print "<td style=\"text-align:center\">". $row['year'] . "</td>" ;
-        print "<td style=\"text-align:center\">". $row['dollar_value'] . "</td>" ;
+	    print "<td><a href=\"#posterPopup\" data-rel=\"popup\" data-position-to=\"window\"". $row['movie_title'] . "</td>" ;
+	    print "<td>". $row['studio_name'] . "</td>" ;
+	    print "<td>". $row['year'] . "</td>" ;
+        print "<td>". $row['dollar_value'] . "</td>" ;
 	   
 	    print "<td><div class='row'>";
 	    	    
@@ -72,6 +72,12 @@
 <br><br>
 <hr>
 <br><br>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<div data-role="popup" id="posterPopup">
+    <a href="#main" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="<?= $row['poster'] ?>" alt="Poster">
+</div>
 
 <div class="alert alert-danger" role="alert">
 	<h2>Things Missing</h2>
