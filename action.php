@@ -25,25 +25,26 @@
 	   // SHOULD HAVE VALIDATION HERE!?
 		
 	
-	   $sql = "INSERT INTO users (first_name,last_name,login,password) VALUES ('$first_name' , '$last_name' , '$login' , '$password')";
+	   $sql = "INSERT INTO users (movie_title,studio_name,year,dollar_value,poster) VALUES ('$movie_title' , '$studio_name' , '$year' , '$dollar_value', '$poster')";
 	   $result = mysqli_query($conn, $sql);
 		
 		
 	} else if ($action == "Update") {
 		
-	   $first_name = $_REQUEST['first_name'];
-	   $last_name = $_REQUEST['last_name'];
-	   $login = $_REQUEST['login'];
-	   $password = $_REQUEST['password'];
-	   $user_id = $_REQUEST['user_id'];
+	   $poster = $_REQUEST['poster'];
+       $movie_title = $_REQUEST['movie_title'];
+       $studio_name = $_REQUEST['studio_name'];
+       $year = $_REQUEST['year'];
+       $dollar_value = $_REQUEST['dollar_value'];
+       $id = $_REQUEST['id'];
 	
-	   $sql = "UPDATE users SET first_name='" .$first_name."' ,last_name='".$last_name."' ,login='".$login."' ,password='".$password."' WHERE user_id='".$user_id."'";
+	   $sql = "UPDATE users SET movie_title='" .$movie_title."' ,studio_name='".$studio_name."' ,year='".$year."' ,dollar_value='".$dollar_value."' WHERE id='".$id."'";
        $result = mysqli_query($conn, $sql);
 		
 	}  else if ($action == "Delete") {
 		
   		
-       $sql = "DELETE FROM users WHERE user_id='".$_POST['user_id']."'"; 
+       $sql = "DELETE FROM users WHERE id='".$_POST['id']."'"; 
        $result = mysqli_query($conn, $sql);
 
 		
