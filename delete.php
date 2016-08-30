@@ -18,7 +18,7 @@
   </div>
   <div class="panel-body">
 	  
-    <form action="action.php" method="POST">
+    <form action="/action" method="POST">
 
 	<input type="hidden" name="id" value="<?= $_POST['id'] ?>">
 
