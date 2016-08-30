@@ -40,7 +40,7 @@
     
       while($row = mysqli_fetch_assoc($result)) {
 	    print "<tr>";
-	    print "<td><img src=\"". $row['poster'] . "\" alt=\"Poster\"></td>" ;
+	    print "<td><img src=\"". $row['poster'] . "\" alt=\"Poster\" width=60, height=90></td>" ;
 	    print "<td>". $row['movie_title'] . "</td>" ;
 	    print "<td>". $row['studio_name'] . "</td>" ;
 	    print "<td>". $row['year'] . "</td>" ;
