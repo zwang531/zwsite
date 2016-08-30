@@ -28,7 +28,7 @@
     }
     
     // FORM AND EXECUTE SOME QUERY
-    $sql = "SELECT poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC";
+    $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC";
     $result = mysqli_query($conn, $sql);
     
     // USE THE QUERY RESULT
