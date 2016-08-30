@@ -1,6 +1,6 @@
 <?php
 
- $action = $_POST['action'];
+ $action = $_REQUEST['action'];
 
  
  $poster = '';
@@ -12,7 +12,7 @@
  
  if ($action == "Update") {
    
-    $id = $_POST['id'];
+    $id = $_REQUEST['id'];
      
     define('DB_USER','root');
     define('DB_PASSWORD','1234');
@@ -75,7 +75,6 @@
 	</div>
 
 	<input type="hidden" name="id" value="<?= $id ?>">
-	<br><br>
     
 	<div class="form-group">
 	<input type="submit" value="<?= $action ?>" name="action" class="btn btn-primary">

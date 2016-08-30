@@ -48,11 +48,11 @@
 	   
 	    print "<td><div class='row'>";
 	    	    
-	    print "<div class='col-sm-6'><form action='edit.php' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'>
+	    print "<div class='col-sm-6'><form action='/edit.php' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'>
 	    <div class='form-group'><button type='submit' name='action' value='Update' class='btn btn-default'>
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
 	    
-	    print "<div class='col-sm-6'><form action='delete.php' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value=delete'>
+	    print "<div class='col-sm-6'><form action='/delete.php' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value=delete'>
   <span class='glyphicon glyphicon-trash'></span></button></div></form></div>";
 
   	    print "</div></td></tr>\n";
@@ -65,7 +65,7 @@
    print "</table>"
 ?>
 
-<form action="edit.php" method="POST">
+<form action="/edit.php" method="POST">
 	<input type="submit" name="action" value="Add" class="btn btn-lg btn-primary">
 </form>	
 
