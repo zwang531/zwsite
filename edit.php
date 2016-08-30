@@ -75,7 +75,8 @@
 	</div>
 
 	<input type="hidden" name="id" value="<?= $id ?>">
-	
+	<br><br>
+    
 	<div class="form-group">
 	<input type="submit" value="<?= $action ?>" name="action" class="btn btn-primary">
 	<input type="submit" value="Cancel" name="action"  class="btn btn-default">	

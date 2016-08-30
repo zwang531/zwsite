@@ -33,7 +33,7 @@
     
     // USE THE QUERY RESULT
     print "<table class='table'>";
-    print "<tr><th>Poster</th><th>Movie Title</th><th>Studio</th><th>Year</th><th>Box Office $</th><th></th>/tr>";   
+    print "<tr><th>Poster</th><th>Movie Title</th><th>Studio</th><th>Year</th><th>Box Office $</th><th></th></tr>";   
     
     if (mysqli_num_rows($result) > 0) {
     
@@ -59,7 +59,7 @@
 
       }
     } else {
-	    print "<tr><td colspan='5'>No Rows</td></tr>";
+	    print "<tr><td colspan='5'>No Data</td></tr>";
     }
     
    print "</table>"
