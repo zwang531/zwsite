@@ -65,7 +65,7 @@
    print "</table>"
 ?>
 
-<form action="/edit.php" method="POST">
+<form action="/edit" method="POST">
 	<input type="submit" name="action" value="Add" class="btn btn-lg btn-primary">
 </form>	
 
