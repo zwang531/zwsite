@@ -49,6 +49,6 @@
 		
 	}
 
-	header('Location: index.php');
+	header('Location: CRUD.php');
 	
 ?>
