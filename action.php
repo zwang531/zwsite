@@ -25,7 +25,7 @@
 	   // SHOULD HAVE VALIDATION HERE!?
 		
 	
-	   $sql = "INSERT INTO users (movie_title,studio_name,year,dollar_value,poster) VALUES ('$movie_title' , '$studio_name' , '$year' , '$dollar_value', '$poster')";
+	   $sql = "INSERT INTO movies (movie_title,studio_name,year,dollar_value,poster) VALUES ('$movie_title' , '$studio_name' , '$year' , '$dollar_value', '$poster')";
 	   $result = mysqli_query($conn, $sql);
 		
 		
@@ -38,13 +38,13 @@
        $dollar_value = $_REQUEST['dollar_value'];
        $id = $_REQUEST['id'];
 	
-	   $sql = "UPDATE users SET movie_title='" .$movie_title."' ,studio_name='".$studio_name."' ,year='".$year."' ,dollar_value='".$dollar_value."' WHERE id='".$id."'";
+	   $sql = "UPDATE movies SET movie_title='" .$movie_title."' ,studio_name='".$studio_name."' ,year='".$year."' ,dollar_value='".$dollar_value."' WHERE id='".$id."'";
        $result = mysqli_query($conn, $sql);
 		
 	}  else if ($action == "Delete") {
 		
   		
-       $sql = "DELETE FROM users WHERE id='".$_POST['id']."'"; 
+       $sql = "DELETE FROM movies WHERE id='".$_POST['id']."'"; 
        $result = mysqli_query($conn, $sql);
 
 		
