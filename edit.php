@@ -68,6 +68,11 @@
 	<label for="year">Year</label>
 	<input type="text" name="year" value="<?= $year ?>"  class="form-control">
 	</div>
+    
+    <div class="form-group">
+	<label for="dollar_value">Box Office $</label>
+	<input type="text" name="dollar_value" value="<?= $dollar_value ?>"  class="form-control">
+	</div>
 
 	<div class="form-group">
 	<label>Poster</label>
