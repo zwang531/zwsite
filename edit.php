@@ -103,5 +103,5 @@ session_start();
 
 </div>
 
-</body>
-</html><?php } ?>
+<?php } ?></body>
+<?php } ?></html>
