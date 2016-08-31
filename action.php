@@ -25,6 +25,7 @@
             
             $target_file = $target_dir . basename($_FILES["poster"]["name"]);
             if (file_exists($target_file) || $_FILES["poster"]["size"] > 500000){
+                if (file_exists($target_file)) $upload = true;
                 // TODO: should print error msg somewhere
 
             }
@@ -75,7 +76,15 @@
        $result = mysqli_query($conn, $sql);
 		
 	}  else if ($action == "Delete") {
-		
+        
+        $sql = "SELECT poster FROM movies where id = ".$_POST['id'];
+        $result = mysqli_query($conn, $sql);
+		while($row = mysqli_fetch_assoc($result)) {
+            $poster = $row['poster'];
+	    }
+         if ($poster != 'img/unknown.png' && file_exists($poster)){
+             unlink($poster);
+         }
   		
        $sql = "DELETE FROM movies WHERE id='".$_POST['id']."'"; 
        $result = mysqli_query($conn, $sql);
