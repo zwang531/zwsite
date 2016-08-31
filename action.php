@@ -17,7 +17,6 @@
     $upload = false;
     $target_dir = 'img/';
     $filename = '';
-    $err = '';
 
     if ($action == 'Add' || $action == 'Update'){
         $filename = basename($_FILES["poster"]["name"]);
@@ -43,6 +42,7 @@
 	   
 	   // SHOULD HAVE VALIDATION HERE!?
         
+        $err = '';
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
             if($err != '') $err .= "<br>";
             $err .= "Text Fields contain HTMP or PHP tags!";
@@ -79,6 +79,7 @@
         
        $id = $_REQUEST['id'];
         
+        $err = '';
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
             if($err != '') $err .= "<br>";
             $err .= "Text Fields contain HTMP or PHP tags!";
