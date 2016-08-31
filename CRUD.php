@@ -14,10 +14,6 @@
 <div class="container">
 	
 <h1>Box Office</h1>
-
-<br><form action="/edit" method="POST">
-	<input type="submit" name="action" value="Add" class="btn btn-primary">
-</form><br>  
         
 <?php
     
@@ -194,6 +190,11 @@
 	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=all">All</a></li>
 	</ul>
     </div>
+
+
+<form action="/edit" method="POST" style="float:right;">
+	<input type="submit" name="action" value="Add" class="btn btn-primary">
+</form>
     
 <br><br>
 <hr>
