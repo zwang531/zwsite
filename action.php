@@ -13,20 +13,8 @@
     
 	$action = $_REQUEST['action'];
     
-    $poster = '';
-    $movie_title = '';
-    $studio_name = '';
-    $year = '';
-    $dollar_value = '';
-    
-    if ($action != 'Delete'){
-        $poster = $_REQUEST['poster'];
-        if ($poster == "") $poster = "img/unknown.png";
-        $movie_title = $_REQUEST['movie_title'];
-        $studio_name = $_REQUEST['studio_name'];
-        $year = $_REQUEST['year'];
-        $dollar_value = $_REQUEST['dollar_value'];
-    }
+    $poster = $_REQUEST['poster'];
+    if ($poster == "") $poster = "img/unknown.png";
 
     $upload = false;
     $target_dir = "img/";
@@ -51,6 +39,11 @@
     }
 	
 	if ($action == 'Add') {
+        
+        $movie_title = $_REQUEST['movie_title'];
+        $studio_name = $_REQUEST['studio_name'];
+        $year = $_REQUEST['year'];
+        $dollar_value = $_REQUEST['dollar_value'];
 	   
 	   // SHOULD HAVE VALIDATION HERE!?
 		if ($upload == true){
@@ -64,6 +57,11 @@
 		
 		
 	} else if ($action == "Update") {
+        
+        $movie_title = $_REQUEST['movie_title'];
+        $studio_name = $_REQUEST['studio_name'];
+        $year = $_REQUEST['year'];
+        $dollar_value = $_REQUEST['dollar_value'];
         
        $id = $_REQUEST['id'];
         
