@@ -87,35 +87,21 @@
     print "<table class='table'>";
     print "<tr><th>Poster</th><th>Movie Title</th><th>Studio</th><th>Year</th><th>Box Office $</th><th></th></tr>";   
     
-    $curr_id = '';
-    $curr_poster = '';
-    $curr_movie_title = '';
-    $curr_studio_name = '';
-    $curr_year = '';
-    $curr_dollar_value = '';
-    
     $count = mysqli_num_rows($result);
     if ($count > 0) {
     
       while($row = mysqli_fetch_assoc($result)) {
-          
-        $curr_id = $row['id'];
-        $curr_poster = $row['poster'];
-        $curr_movie_title = $row['movie_title'];
-        $curr_studio_name = $row['studio_name'];
-        $curr_year = $row['year'];
-        $curr_dollar_value = $row['dollar_value'];
     
 	    print "<tr>";
-	    print "<td><img src=\"". $curr_poster . "\" alt=\"Poster\" width=60, height=90></td>" ;
-	    print "<td>". $curr_movie_title . "</td>" ;
-	    print "<td>". $curr_studio_name . "</td>" ;
-	    print "<td>". $curr_year . "</td>" ;
-        print "<td>". $curr_dollar_value . "</td>" ;
+	    print "<td><img src=\"". $row['poster'] . "\" alt=\"Poster\" width=60, height=90></td>" ;
+	    print "<td>". $row['movie_title'] . "</td>" ;
+	    print "<td>". $row['studio_name'] . "</td>" ;
+	    print "<td>". $row['year'] . "</td>" ;
+        print "<td>". $row['dollar_value'] . "</td>" ;
 	   
 	    print "<td><div class='row'>";
 	    	    
-	    print "<div class='col-sm-6'><form action='/edit' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$curr_id."'>
+	    print "<div class='col-sm-6'><form action='/edit' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'>
 	    <div class='form-group'><button type='submit' name='action' value='Update' class='btn btn-default'>
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
 	    
@@ -222,7 +208,7 @@
         <div class="modal-footer">
           <form action="/action" method="POST">
 
-	       <input type="hidden" name="id" value="<?= $curr_id ?>">
+	       <input type="hidden" name="id" value="<?= $row['id'] ?>">
 
 	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
 
