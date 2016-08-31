@@ -14,6 +14,10 @@
 <div class="container">
 	
 <h1>Box Office</h1>
+    
+<form action="/edit" method="POST" style="float:right;">
+	<input type="submit" name="action" value="Add" class="btn btn-lg btn-primary">
+</form>	
         
 <?php
     
@@ -122,9 +126,9 @@
     else
 	$max_page = 1;
 ?>
+    
 <div class='btn-group'>
     
-<div class='btn-group' name='nav'>
     <!-- pagination markup -->
     <nav aria-label="Page navigation">
       <ul class="pagination">
@@ -192,16 +196,7 @@
 	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=all">All</a></li>
 	</ul>
     </div>
-</div> <!-- end of nav button group -->
     
-<br>
-
-<div>
-<form action="/edit" method="POST" style="float:right;">
-	<input type="submit" name="action" value="Add" class="btn btn-lg btn-primary">
-</form>	
-</div>
-
 </div> <!-- end of nav button group -->
 
 <br><br>
