@@ -47,7 +47,7 @@
             $err .= "Year should be within range 1900-2100!";
         }
         if($dollar_value < 0){
-            $err .= "\nBox Office $ should be positive!"
+            $err .= "\nBox Office $ should be positive!";
         }
         if(strpos($movie_title, 'script>')!=false || strpos($movie_title, '<?php')!=false){
             $err .= "\nMovie Title contains invalid input!";
@@ -81,7 +81,7 @@
             $err .= "Year should be within range 1900-2100!";
         }
         if($dollar_value < 0){
-            $err .= "\nBox Office $ should be positive!"
+            $err .= "\nBox Office $ should be positive!";
         }
         if(strpos($movie_title, 'script>')!=false || strpos($movie_title, '<?php')!=false){
             $err .= "\nMovie Title contains invalid input!";
