@@ -1,5 +1,7 @@
 <?php
 session_start();
+unset($_SESSION['username']);
+session_destroy();
 
 	define('DB_USER','root');
 	define('DB_PASSWORD','1234');
@@ -30,9 +32,6 @@ session_start();
                 $upload = move_uploaded_file($_FILES["poster"]["tmp_name"], $target_file);
                 if ($upload == false) {
                     // TODO: should print error msg somewhere
-                    $err .= "failed to upload image!";
-                    $_SESSION['err_msg'] = $err;
-                    //die($err);
                 } 
             }
         }
@@ -60,6 +59,7 @@ session_start();
             $err .= "Box Office $ should be positive!";
         }
         if(err != '') {
+            session_start();
             $_SESSION['err_msg'] = $err; header("Location: /edit"); exit();
             //die($err);
         }

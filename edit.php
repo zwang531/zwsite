@@ -55,13 +55,16 @@ session_start();
 <div class="container">
 	
 <h1><?= $action ?> Record</h1>
-    
-<div class="alert alert-danger" role="alert">
-<a href="/clear_err_msg" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <script language="php"> 
-        if(isset($_SESSION['err_msg'])) print($_SESSION['err_msg']) 
-    </script> 
-</div>
+
+<script language="php"> 
+    if(isset($_SESSION['err_msg'])){
+        print <<< END
+            <div class="alert alert-danger" role="alert">
+                <strong>Oops!</strong><br>$_SESSION['err_msg']
+            </div>
+        END;
+    }
+</script> 
 
 <form action="/action" method="POST" class="form" enctype="multipart/form-data">
 	<div class="form-group">
