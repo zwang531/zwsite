@@ -16,7 +16,7 @@
 <h1>Box Office</h1><br>
     
 <form action="/edit" method="POST">
-	<input type="submit" name="action" value="  Add  " class="btn btn-primary">
+	<input type="submit" name="action" value="Add" class="btn btn-primary">
 </form><br>
         
 <?php
@@ -49,31 +49,15 @@
 	$e = 20;
     elseif($entry == "all" || $entry == "-1")
 	$e = -1;
-    else
-    {
-        $e=5;
-        $entry="5";
-    }
-/*
-    $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies";
-    $result = mysqli_query($conn, $sql);
-    $count = mysqli_num_rows($result);
-    if($e != -1)
-	$max_page = ceil($count/$e);
-    else
-	$max_page = 1;
-*/    
+
     if($page == "" || $page == "1")
     {
 	$p = 0;
 	$page = "1";
     }
     else
-    {
-        //if(intval($page) > $max_page || intval($page) < 1)
-            //$p = ($max_page * $e) - $e;
-        //else
-            $p = ($page * $e) - $e;
+    {	
+	$p = ($page * $e) - $e;
     }
 
     // FORM AND EXECUTE SOME QUERY
@@ -134,7 +118,7 @@
     
     print "</table>";
 
-    $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies";
+    $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC";
     $result = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($result);
     if($e != -1)
