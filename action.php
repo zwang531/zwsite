@@ -12,24 +12,19 @@
     }
     
 	$action = $_REQUEST['action'];
-    
-    $poster = $_REQUEST['poster'];
-    if ($poster == "") $poster = "img/unknown.png";
+    $poster = 'img/unknown.png';
 
     $upload = false;
-    $target_dir = "img/";
-    $target_file = "" . $poster;
+    $target_dir = 'img/';
+    $filename = '';
 
     if ($action == 'Add' || $action == 'Update'){
-        if (strpos($poster, 'img/') == false){
-            
-            $target_file = $target_dir . basename($_FILES["poster"]["name"]);
-            if (file_exists($target_file) || $_FILES["poster"]["size"] > 500000){
-                if (file_exists($target_file)) $upload = true;
-                // TODO: should print error msg somewhere
-
-            }
-            else{
+        $filename = basename($_FILES["poster"]["name"]);
+        if($filename != ''){
+            $target_file = $target_dir . $filename;
+            if (file_exists($target_file))
+                $poster = '' . $target_file;
+            else if (file_exists($target_file) == false && $_FILES["poster"]["size"] < 500000){
                 $upload = move_uploaded_file($_FILES["poster"]["tmp_name"], $target_file);
                 if ($upload == false) {
                     // TODO: should print error msg somewhere
@@ -45,8 +40,6 @@
         $studio_name = $_REQUEST['studio_name'];
         $year = $_REQUEST['year'];
         $dollar_value = $_REQUEST['dollar_value'];
-        $poster = $_REQUEST['poster'];
-        if ($poster == "") $poster = "img/unknown.png";
 	   
 	   // SHOULD HAVE VALIDATION HERE!?
 		if ($upload == true){
@@ -65,8 +58,6 @@
         $studio_name = $_REQUEST['studio_name'];
         $year = $_REQUEST['year'];
         $dollar_value = $_REQUEST['dollar_value'];
-        $poster = $_REQUEST['poster'];
-        if ($poster == "") $poster = "img/unknown.png";
         
        $id = $_REQUEST['id'];
         
