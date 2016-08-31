@@ -29,7 +29,7 @@ session_start();
                 $upload = move_uploaded_file($_FILES["poster"]["tmp_name"], $target_file);
                 if ($upload == false) {
                     // TODO: should print error msg somewhere
-                    $_SESSION['err_msg'] = $err; exit();
+                    $_SESSION['err_msg'] = $err; header("Location: /edit"); exit();
                     //die("failed to upload image!");
                 } 
             }
@@ -55,7 +55,7 @@ session_start();
             $err .= "<br>Text Fields contain HTMP or PHP tags!";
         }
         if(err != '') {
-            $_SESSION['err_msg'] = $err; exit();
+            $_SESSION['err_msg'] = $err; header("Location: /edit"); exit();
             //die($err);
         }
         
@@ -89,7 +89,7 @@ session_start();
             $err .= "<br>Text Fields contain HTMP or PHP tags!";
         }
         if(err != '') {
-            $_SESSION['err_msg'] = $err; exit();
+            $_SESSION['err_msg'] = $err; header("Location: /edit"); exit();
             //die($err);
         }
                 

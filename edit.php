@@ -1,8 +1,9 @@
 <?php
+session_start();
 
  $action = $_POST['action'];
 
- 
+
  $poster = '';
  $movie_title = '';
  $studio_name = '';
@@ -52,6 +53,10 @@
 <div class="container">
 	
 <h1><?= $action ?> Record</h1>
+    
+<div class="alert alert-danger" role="alert">
+    <strong><?= if(isset($_SESSION['err_msg'])) $_SESSION['err_msg'] ?></strong>
+</div>
 
 <form action="/action" method="POST" class="form" enctype="multipart/form-data">
 	<div class="form-group">
