@@ -1,5 +1,5 @@
 <?php
-	
+
 	define('DB_USER','root');
 	define('DB_PASSWORD','1234');
 	define('DB_HOST','127.0.0.1');
@@ -28,7 +28,7 @@
                 $upload = move_uploaded_file($_FILES["poster"]["tmp_name"], $target_file);
                 if ($upload == false) {
                     // TODO: should print error msg somewhere
-                    
+                    die("failed to upload image!");
                 } 
             }
         }

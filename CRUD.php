@@ -12,9 +12,9 @@
 <div class="container">
 	
 <h1>Box Office</h1>
-
+        
 <?php
-
+    
     define('DB_USER','root');
     define('DB_PASSWORD','1234');
     define('DB_HOST','127.0.0.1');
