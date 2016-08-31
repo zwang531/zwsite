@@ -82,12 +82,6 @@
         }
         
 	   $result = mysqli_query($conn, $sql);
-        
-        if (!mysqli_query($conn, "SET a=1")) {
-            $err = mysqli_error($link);
-            $err = "SQL error message: " . $err . "\n";
-            die($err);
-        }
 		
 		
 	} else if ($action == "Update") {
@@ -134,12 +128,6 @@
         }
 	
        $result = mysqli_query($conn, $sql);
-        
-        if (!mysqli_query($conn, "SET a=1")) {
-            $err = mysqli_error($link);
-            $err = "SQL error message: " . $err . "\n";
-            die($err);
-        }
 		
 	}  else if ($action == "Delete") {
         
@@ -157,15 +145,8 @@
        $sql = "DELETE FROM movies WHERE id='".$id."'"; 
        $result = mysqli_query($conn, $sql);
 
-        if (!mysqli_query($conn, "SET a=1")) {
-            $err = mysqli_error($link);
-            $err = "SQL error message: " . $err . "\n";
-            die($err);
-        }
 		
 	}
-
-    mysqli_close($conn);
 
 	header('Location: CRUD.php');
 	

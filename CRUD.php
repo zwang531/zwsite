@@ -131,7 +131,6 @@
     if($e != -1) $max_page = ceil($count/$e);
     else $max_page = 1;
     
-    mysqli_close($conn);
 ?>
         
     <!-- pagination markup -->
