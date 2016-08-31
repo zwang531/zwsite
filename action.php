@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 	define('DB_USER','root');
 	define('DB_PASSWORD','1234');
@@ -28,7 +29,8 @@
                 $upload = move_uploaded_file($_FILES["poster"]["tmp_name"], $target_file);
                 if ($upload == false) {
                     // TODO: should print error msg somewhere
-                    die("failed to upload image!");
+                    $_SESSION['err_msg'] = $err; exit();
+                    //die("failed to upload image!");
                 } 
             }
         }
@@ -52,7 +54,10 @@
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
             $err .= "<br>Text Fields contain HTMP or PHP tags!";
         }
-        if(err != '') die($err);
+        if(err != '') {
+            $_SESSION['err_msg'] = $err; exit();
+            //die($err);
+        }
         
 		if ($upload == true){
             $sql = "INSERT INTO movies (movie_title,studio_name,year,dollar_value,poster) VALUES ('$movie_title' , '$studio_name' , '$year' , '$dollar_value', '$target_file')";
@@ -83,7 +88,10 @@
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
             $err .= "<br>Text Fields contain HTMP or PHP tags!";
         }
-        if(err != '') die($err);
+        if(err != '') {
+            $_SESSION['err_msg'] = $err; exit();
+            //die($err);
+        }
                 
         if ($upload == true){
             $sql = "UPDATE movies SET movie_title='" .$movie_title."' ,studio_name='".$studio_name."' ,year='".$year."' ,dollar_value='".$dollar_value."' ,poster='".$target_file."' WHERE id='".$id."'";
