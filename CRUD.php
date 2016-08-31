@@ -14,10 +14,11 @@
 <div class="container">
 	
 <h1>Box Office</h1>
-    
-<form action="/edit" method="POST" style="float:right;">
+
+<div>
+<form action="/edit" method="POST">
 	<input type="submit" name="action" value="Add" class="btn btn-lg btn-primary">
-</form>	
+</form></div>    
         
 <?php
     
