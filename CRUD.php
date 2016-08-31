@@ -52,7 +52,7 @@
 	    <div class='form-group'><button type='submit' name='action' value='Update' class='btn btn-default'>
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
 	    
-	    print "<div class='col-sm-6'><form action='/delete' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value='Delete'>
+	    print "<div class='col-sm-6'><form action='/delete' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value='delete'>
   <span class='glyphicon glyphicon-trash'></span></button></div></form></div>";
 
   	    print "</div></td></tr>\n";
