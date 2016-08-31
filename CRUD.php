@@ -125,7 +125,7 @@
 
     <!-- pagination markup -->
     <nav aria-label="Page navigation">
-      <ul class="pagination pagination-lg">
+      <ul class="pagination">
         <li>
           <a href="CRUD.php?page=<?php
 
@@ -149,7 +149,7 @@
 	    }
 	?>
         <li>
-          <a href="CRUD.php?page=<?php 
+          <a href="CRUD?page=<?php 
 	    
 	    if($page == "1" || $page == "")
 	    {	
@@ -182,7 +182,7 @@
 
 
     <div class="dropdown">
-	<button class="btn btn-info btn-lg dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Entries per List View<span class="caret"></span></button>
+	<button class="btn btn-defualt dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Entries per List View<span class="caret"></span></button>
 	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=5">5</a></li>
 	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=10">10</a></li>
