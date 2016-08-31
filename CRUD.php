@@ -53,7 +53,7 @@
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
 	    
 	    print "<div class='col-sm-6'><div class='form-group'><button type='button' name='action' value='Delete' class='btn btn-default' data-toggle='modal' data-target='#confirmDelete'>
-  <span class='glyphicon glyphicon-trash'></span></button></div></form></div>";
+  <span class='glyphicon glyphicon-trash'></span></button></div></div>";
 
   	    print "</div></td></tr>\n";
 
