@@ -1,7 +1,4 @@
 <?php
-session_start();
-unset($_SESSION['err_msg']);
-session_destroy();
 
 	define('DB_USER','root');
 	define('DB_PASSWORD','1234');
@@ -59,9 +56,7 @@ session_destroy();
             $err .= "Box Office $ should be positive!";
         }
         if(err != '') {
-            session_start();
-            $_SESSION['err_msg'] = $err; header("Location: /edit"); exit();
-            //die($err);
+            die($err);
         }
         
 		if ($upload == true){
@@ -96,8 +91,7 @@ session_destroy();
             $err .= "Box Office $ should be positive!";
         }
         if(err != '') {
-            $_SESSION['err_msg'] = $err; header("Location: /edit"); exit();
-            //die($err);
+            die($err);
         }
                 
         if ($upload == true){

@@ -1,5 +1,4 @@
 <?php
-session_start();
 
  $action = $_POST['action'];
 
@@ -55,9 +54,6 @@ session_start();
 <div class="container">
 	
 <h1><?= $action ?> Record</h1>
-
-<div class='alert alert-danger' role='alert'>
-    <strong>Oops!</strong><br><?= $_SESSION['err_msg'] ?></div> 
 
 <form action="/action" method="POST" class="form" enctype="multipart/form-data">
 	<div class="form-group">
