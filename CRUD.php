@@ -222,7 +222,7 @@
         <div class="modal-footer">
           <form action="/action" method="POST">
 
-	       <input type="hidden" id="hidden_id" name="id">
+	       <input type="hidden" id="id" name="id">
 
 	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
 
@@ -235,7 +235,7 @@
     
     <script>
         function setID(clicked_id){
-            document.getElementById("hidden_id").setAttribute('value' = $id);
+            document.getElementById("id").setAttribute('value' = $id);
         }
     </script>
 

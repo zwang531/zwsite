@@ -9,6 +9,7 @@
  $year = '';
  $dollar_value = '';
  
+$id = '';
  
  if ($action == "Update") {
    
