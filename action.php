@@ -10,6 +10,24 @@
 	if (!$conn) {
 	  die("Connection failed: " . mysqli_connect_error());
     }
+
+    $method = $request = $key = $sql = '';
+    if(isset($_SERVER['REQUEST_METHOD'])){
+        $method = $_SERVER['REQUEST_METHOD'];
+        $request = $_SERVER['REQUEST_URI'];
+        $key = array_shift($request)+0;
+    }
+    if($method != '' && $method == 'DELETE'){
+        $sql = "delete from users where user_id=$key";
+        $res = mysqli_query($conn, $sql);
+        if (!$result) {
+            http_response_code(404);
+            die("Query failed: " . mysqli_connect_error());
+        }
+        echo mysqli_affected_rows($conn);
+        mysqli_close($conn);
+        exit();
+    }
     
 	$action = $_REQUEST['action'];
     $poster = 'img/unknown.png';

@@ -106,16 +106,16 @@
 	    print "<div class='col-sm-6'><form action='/edit' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'>
 	    <div class='form-group'><button type='submit' name='action' value='Update' class='btn btn-default'>
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
-          
+/*          
           print "<div class='col-sm-6'><form action='/delete' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'>
 	    <div class='form-group'><button type='submit' name='action' value='delete' class='btn btn-default'>
   <span class='glyphicon glyphicon-trash'></span></button></div></form></div>";
 	    
           $tmp_id = $row['id'];
-/*          
+*/          
 	    print "<div class='col-sm-6'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value=delete' data-toggle='modal' data-target='#deleteModal'>
   <span class='glyphicon glyphicon-trash'></span></button></div></div>";
-*/
+
   	    print "</div></td></tr>\n";
 
       }
@@ -215,18 +215,51 @@
           <p>Do you really want to delete it permanently?</p>
         </div>
         <div class="modal-footer">
-          <form action="/action" method="POST">
-
-	       <input type="hidden" name="id" value="<?= $tmp_id ?>">
-
-	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
-
+          <form>
+	  	    <input type="hidden" name="user_id" id="deleteConfirm_user_id" value="">
+	  	
+	  	    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" id="deleteBtn" class="btn btn-primary" value="Delete">Delete</button>
           </form>
         </div>
       </div>
       
     </div>
   </div>
+    
+<script>
+    var SBC = {};
+    
+    SBC.confirmDelete = function confirmDelete(id) {
+	  $("#deleteConfirm_user_id").attr('value',id);
+	  $("#deleteBtn").click(function () {
+		  SBC.doDelete();
+	  })
+	  $('#deleteModal').modal('show');  
+	
+	}; /* confirmDelete*/
+	
+	SBC.doDelete = function doDelete() {
+		var id = $("#deleteConfirm_user_id").attr('value');
+				
+		$.ajax({
+         type: "DELETE",
+         url: "./api.php/"+id,
+         success: function (data, status, xhr) {
+		 	$("#deleteBtn").unbind("click");
+		 	$("#deleteModal").modal('hide');
+		 	SBC.loadData();
+         },
+     
+         error: function (xhr, status) {
+             // error handler
+             alert('Delete error');
+         }
+        });		
+        
+	}; /* doDelete */
+    
+</script>
 
 <div class="alert alert-danger" role="alert">
 	<h2>Things Missing</h2>
