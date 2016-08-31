@@ -96,6 +96,8 @@
     
       while($row = mysqli_fetch_assoc($result)) {
           
+        $action = '';
+          
         $curr_id = $row['id'];
         $curr_poster = $row['poster'];
         $curr_movie_title = $row['movie_title'];
@@ -203,8 +205,8 @@
 <hr>
 <br><br>
     
-<!-- Modal -->
-  <div class="modal fade" id="deleteModal" role="dialog">
+<!-- Action Modal -->
+  <div class="modal fade" id="actionModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -215,6 +217,33 @@
         </div>
         <div class="modal-body">
           <p>Do you really want to delete it permanently?</p>
+        </div>
+        <div class="modal-footer">
+          <form action="/action" method="POST">
+
+	       <input type="hidden" name="id" value="<?= $curr_id ?>">
+
+	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
+
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+    
+<!-- Delete Modal -->
+  <div class="modal fade" id="deleteModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Warning!</h4>
+        </div>
+        <div class="modal-body">
+          <p>Do you really want to delete it permanently? <?= $_POST['action'] ?></p>
         </div>
         <div class="modal-footer">
           <form action="/action" method="POST">
