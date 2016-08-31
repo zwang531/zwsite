@@ -123,7 +123,7 @@
 	$max_page = 1;
 ?>
 
-<form action="/edit" method="POST" style="float:right; margin-right:%10">
+<form action="/edit" method="POST" style="float:right; margin-right:%10;">
 	<input type="submit" name="action" value="Add" class="btn btn-lg btn-primary">
 </form>
         
