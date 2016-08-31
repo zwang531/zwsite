@@ -35,11 +35,10 @@
 
 
     //pagination
-    $page = '';
-    if(isset($_GET["page"])) 
+    $page = $entry = '';
+    if (isset($_GET["page"]))
         $page = $_GET["page"];
-    $entry = '';
-    if(isset($_GET["entry"])) 
+    if (isset($_GET["entry"]))
         $entry = $_GET["entry"];
 
     if($entry == "" || $entry == "5")
@@ -100,8 +99,6 @@
     
       while($row = mysqli_fetch_assoc($result)) {
           
-        $action = '';
-          
         $curr_id = $row['id'];
         $curr_poster = $row['poster'];
         $curr_movie_title = $row['movie_title'];
@@ -121,11 +118,8 @@
 	    print "<div class='col-sm-6'><form action='/edit' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$curr_id."'>
 	    <div class='form-group'><button type='submit' name='action' value='Update' class='btn btn-default'>
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
-/*         
-        print "<div class='col-sm-6'><div class='form-group'><button type='button' class='btn btn-default' name='btn_update' data-toggle='modal' data-target='#updateModal'>
-  <span class='glyphicon glyphicon-pencil'></span></button></div></div>";
-*/          
-	    print "<div class='col-sm-6'><div class='form-group'><button type='button' class='btn btn-default' name='btn_delete' data-toggle='modal' data-target='#deleteModal'>
+	    
+	    print "<div class='col-sm-6'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value=delete' data-toggle='modal' data-target='#deleteModal'>
   <span class='glyphicon glyphicon-trash'></span></button></div></div>";
 
   	    print "</div></td></tr>\n";
@@ -212,35 +206,6 @@
 <hr>
 <br><br>
     
-<!-- Update Modal -->
-  <div class="modal fade" id="updateModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Update Record</h4>
-        </div>
-        <div class="modal-body">
-          <p>Do you really want to delete it permanently?</p>
-        </div>
-        <div class="modal-footer">
-          <form action="/action" method="POST">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <input type="submit"  name="action" class="btn btn-primary"  value="Delete">
-<!--
-	       <input type="hidden" name="id" value="<?= $curr_id ?>">
-
-	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
--->
-          </form>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-    
 <!-- Delete Modal -->
   <div class="modal fade" id="deleteModal" role="dialog">
     <div class="modal-dialog">
@@ -256,14 +221,10 @@
         </div>
         <div class="modal-footer">
           <form action="/action" method="POST">
-              
-            <input type="hidden" name="id" value="<?= $curr_id ?>">
-              
-	       <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-           <input type="submit"  name="action" class="btn btn-primary"  value="Delete">
-<!--
+
+	       <input type="hidden" name="id" value="<?= $curr_id ?>">
+
 	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
--->
 
           </form>
         </div>
