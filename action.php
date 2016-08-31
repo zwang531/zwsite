@@ -18,6 +18,7 @@ session_start();
     $upload = false;
     $target_dir = 'img/';
     $filename = '';
+    $err = '';
 
     if ($action == 'Add' || $action == 'Update'){
         $filename = basename($_FILES["poster"]["name"]);
@@ -29,8 +30,9 @@ session_start();
                 $upload = move_uploaded_file($_FILES["poster"]["tmp_name"], $target_file);
                 if ($upload == false) {
                     // TODO: should print error msg somewhere
-                    $_SESSION['err_msg'] = $err; header("Location: /edit"); exit();
-                    //die("failed to upload image!");
+                    $err .= "failed to upload image!";
+                    $_SESSION['err_msg'] = $err;
+                    //die($err);
                 } 
             }
         }
@@ -44,15 +46,18 @@ session_start();
         $dollar_value = $_REQUEST['dollar_value'];
 	   
 	   // SHOULD HAVE VALIDATION HERE!?
-       $err = '';
+        
+        if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
+            if($err != '') $err .= "<br>";
+            $err .= "Text Fields contain HTMP or PHP tags!";
+        }
         if($year<1900 || $year>2020){
+            if($err != '') $err .= "<br>";
             $err .= "Year should be a integer which is in range ( 1900 - 2100 )!";
         }
         if($dollar_value < 0){
-            $err .= "<br>Box Office $ should be positive!";
-        }
-        if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
-            $err .= "<br>Text Fields contain HTMP or PHP tags!";
+            if($err != '') $err .= "<br>";
+            $err .= "Box Office $ should be positive!";
         }
         if(err != '') {
             $_SESSION['err_msg'] = $err; header("Location: /edit"); exit();
@@ -78,15 +83,17 @@ session_start();
         
        $id = $_REQUEST['id'];
         
-        $err = '';
+        if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
+            if($err != '') $err .= "<br>";
+            $err .= "Text Fields contain HTMP or PHP tags!";
+        }
         if($year<1900 || $year>2020){
+            if($err != '') $err .= "<br>";
             $err .= "Year should be a integer which is in range ( 1900 - 2100 )!";
         }
         if($dollar_value < 0){
-            $err .= "<br>Box Office $ should be positive!";
-        }
-        if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
-            $err .= "<br>Text Fields contain HTMP or PHP tags!";
+            if($err != '') $err .= "<br>";
+            $err .= "Box Office $ should be positive!";
         }
         if(err != '') {
             $_SESSION['err_msg'] = $err; header("Location: /edit"); exit();

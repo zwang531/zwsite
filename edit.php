@@ -46,7 +46,9 @@ session_start();
 <title><?= $action ?> Record</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
 </head>
 <body>
 
@@ -55,6 +57,7 @@ session_start();
 <h1><?= $action ?> Record</h1>
     
 <div class="alert alert-danger" role="alert">
+<a href="/clear_err_msg" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <script language="php"> 
         if(isset($_SESSION['err_msg'])) print($_SESSION['err_msg']) 
     </script> 
