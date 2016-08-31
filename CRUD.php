@@ -15,10 +15,9 @@
 	
 <h1>Box Office</h1>
 
-<div>
 <form action="/edit" method="POST">
-	<input type="submit" name="action" value="Add" class="btn btn-lg btn-primary">
-</form></div>    
+	<input type="submit" name="action" value="Add" class="btn btn-primary">
+</form><br>  
         
 <?php
     
@@ -127,9 +126,7 @@
     else
 	$max_page = 1;
 ?>
-    
-<div class='btn-group'>
-    
+        
     <!-- pagination markup -->
     <nav aria-label="Page navigation">
       <ul class="pagination">
@@ -198,8 +195,6 @@
 	</ul>
     </div>
     
-</div> <!-- end of nav button group -->
-
 <br><br>
 <hr>
 <br><br>
