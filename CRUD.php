@@ -123,9 +123,10 @@
 	$max_page = 1;
 ?>
 
+<div style="float:right;">
     <!-- pagination markup -->
     <nav aria-label="Page navigation">
-      <ul class="pagination pagination-lg">
+      <ul class="pagination">
         <li>
           <a href="CRUD.php?page=<?php
 
@@ -182,7 +183,7 @@
 
 
     <div class="dropdown">
-	<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">entries per page<span class="caret"></span></button>
+	<button class="btn btn-info btn-lg dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Entries per List View<span class="caret"></span></button>
 	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=5">5</a></li>
 	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=10">10</a></li>
@@ -190,8 +191,7 @@
 	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=all">All</a></li>
 	</ul>
     </div>
-
-    <br>
+</div>
 
 <form action="/edit" method="POST">
 	<input type="submit" name="action" value="Add" class="btn btn-lg btn-primary">
