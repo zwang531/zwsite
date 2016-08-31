@@ -19,7 +19,7 @@
     $year = '';
     $dollar_value = '';
     
-    if ($action !== 'Delete'){
+    if ($action != 'Delete'){
         $poster = $_REQUEST['poster'];
         if ($poster == "") $poster = "img/unknown.png";
         $movie_title = $_REQUEST['movie_title'];
