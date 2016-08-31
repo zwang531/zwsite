@@ -228,7 +228,7 @@
         <div class="modal-footer">
           <form action="/action" method="POST">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <button type="submit" id="deleteBtn" class="btn btn-primary" name="action" value="Delete">Delete</button>
+            <input type="submit"  name="action" class="btn btn-primary"  value="Delete">
 <!--
 	       <input type="hidden" name="id" value="<?= $curr_id ?>">
 
