@@ -47,7 +47,7 @@
             if($err != '') $err .= "<br>";
             $err .= "Text Fields contain HTMP or PHP tags!";
         }
-        if($year<1900 || $year>2020){
+        if($year!=0 && ($year<1900 || $year>2020)){
             if($err != '') $err .= "<br>";
             $err .= "Year should be a integer which is in range ( 1900 - 2100 )!";
         }
@@ -83,7 +83,7 @@
             if($err != '') $err .= "<br>";
             $err .= "Text Fields contain HTMP or PHP tags!";
         }
-        if($year<1900 || $year>2020){
+        if($year!=0 && ($year<1900 || $year>2020)){
             if($err != '') $err .= "<br>";
             $err .= "Year should be a integer which is in range ( 1900 - 2100 )!";
         }
