@@ -119,7 +119,7 @@
 	    <div class='form-group'><button type='submit' name='action' value='Update' class='btn btn-default'>
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
 	    
-	    print "<div class='col-sm-6'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value=delete' data-toggle='modal' data-target='#deleteModal'>
+	    print "<div class='col-sm-6'><div class='form-group'><button type='button' onclick='setID(this.id)' class='btn btn-default' id='".$curr_id."' value=delete' data-toggle='modal' data-target='#deleteModal'>
   <span class='glyphicon glyphicon-trash'></span></button></div></div>";
 
   	    print "</div></td></tr>\n";
@@ -222,7 +222,7 @@
         <div class="modal-footer">
           <form action="/action" method="POST">
 
-	       <input type="hidden" name="id" value="<?= $curr_id ?>">
+	       <input type="hidden" id="hidden_id" name="id">
 
 	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
 
@@ -232,6 +232,12 @@
       
     </div>
   </div>
+    
+    <script>
+        function setID(clicked_id){
+            document.getElementById("hidden_id").setAttribute('value' = $id);
+        }
+    </script>
 
 <div class="alert alert-danger" role="alert">
 	<h2>Things Missing</h2>
