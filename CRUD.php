@@ -94,10 +94,9 @@
 	       <input type="hidden" name="id" value="<?= $row['id'] ?>">
 
 	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
-	
-	       <input type="submit" name="action" value="Cancel" class="btn btn-default">
 
-    </form>
+          </form>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </div>
       
