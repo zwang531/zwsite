@@ -114,7 +114,7 @@
     
     print "</table>"
 
-    $sql = "SELECT * FROM movies";
+    $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC";
     $result = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($result);
     if($e != -1)
