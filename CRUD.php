@@ -117,8 +117,11 @@
 	    print "<div class='col-sm-6'><form action='/edit' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$curr_id."'>
 	    <div class='form-group'><button type='submit' name='action' value='Update' class='btn btn-default'>
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
-	    
-	    print "<div class='col-sm-6'><div class='form-group'><button type='button' class='btn btn-default' data-toggle='modal' data-target='#deleteModal'>
+/*         
+        print "<div class='col-sm-6'><div class='form-group'><button type='button' class='btn btn-default' name='btn_update' data-toggle='modal' data-target='#updateModal'>
+  <span class='glyphicon glyphicon-pencil'></span></button></div></div>";
+*/          
+	    print "<div class='col-sm-6'><div class='form-group'><button type='button' class='btn btn-default' name='btn_delete' data-toggle='modal' data-target='#deleteModal'>
   <span class='glyphicon glyphicon-trash'></span></button></div></div>";
 
   	    print "</div></td></tr>\n";
@@ -205,26 +208,28 @@
 <hr>
 <br><br>
     
-<!-- Action Modal -->
-  <div class="modal fade" id="actionModal" role="dialog">
+<!-- Update Modal -->
+  <div class="modal fade" id="updateModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Warning!</h4>
+          <h4 class="modal-title">Update Record</h4>
         </div>
         <div class="modal-body">
           <p>Do you really want to delete it permanently?</p>
         </div>
         <div class="modal-footer">
           <form action="/action" method="POST">
-
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="submit" id="deleteBtn" class="btn btn-primary" name="action" value="Delete">Delete</button>
+<!--
 	       <input type="hidden" name="id" value="<?= $curr_id ?>">
 
 	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
-
+-->
           </form>
         </div>
       </div>
@@ -243,14 +248,18 @@
           <h4 class="modal-title">Warning!</h4>
         </div>
         <div class="modal-body">
-          <p>Do you really want to delete it permanently? <?= $_POST['action'] ?></p>
+          <p>Do you really want to delete it permanently?</p>
         </div>
         <div class="modal-footer">
           <form action="/action" method="POST">
 
+	       <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+           <button type="submit" id="deleteBtn" class="btn btn-primary" name="action" value="Delete">Delete</button>
+<!--
 	       <input type="hidden" name="id" value="<?= $curr_id ?>">
 
 	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
+-->
 
           </form>
         </div>
