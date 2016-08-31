@@ -42,16 +42,16 @@
         $dollar_value = $_REQUEST['dollar_value'];
 	   
 	   // SHOULD HAVE VALIDATION HERE!?
-        $err = '';
+       $err = '';
         if($year<1900 || $year>2020){
-            $err .= "Year should be within range 1900-2100!";
+            $err .= "Year should be a integer which is in range ( 1900 - 2100 )!";
         }
         if($dollar_value < 0){
-            $err .= "\nBox Office $ should be positive!";
+            $err .= "<br>Box Office $ should be positive!";
         }
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
-            $err .= "\nText Fields contain HTMP or PHP tags!";
-        }   
+            $err .= "<br>Text Fields contain HTMP or PHP tags!";
+        }
         if(err != '') die($err);
         
 		if ($upload == true){
@@ -75,13 +75,13 @@
         
         $err = '';
         if($year<1900 || $year>2020){
-            $err .= "Year should be within range 1900-2100!";
+            $err .= "Year should be a integer which is in range ( 1900 - 2100 )!";
         }
         if($dollar_value < 0){
-            $err .= "\nBox Office $ should be positive!";
+            $err .= "<br>Box Office $ should be positive!";
         }
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
-            $err .= "\nText Fields contain HTMP or PHP tags!";
+            $err .= "<br>Text Fields contain HTMP or PHP tags!";
         }
         if(err != '') die($err);
                 
