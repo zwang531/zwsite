@@ -53,7 +53,7 @@
 	
 <h1><?= $action ?> Record</h1>
 
-<form action="/action" method="POST" class="form">
+<form action="/action" method="POST" class="form" enctype="multipart/form-data">
 	<div class="form-group">
 	 <label for="movie_title">Movie Title</label>
 	 <input type="text" name="movie_title" value="<?= $movie_title ?>"  class="form-control">
@@ -76,7 +76,7 @@
 
 	<div class="form-group">
 	<label>Poster</label>
-	<input type="file" name="poster" value="<?= $poster ?>" accept="image/*" class="form-control">
+	<input type="file" name="poster" id="poster" value="<?= $poster ?>" accept="image/*" class="form-control">
 	</div>
 
 	<input type="hidden" name="id" value="<?= $id ?>">

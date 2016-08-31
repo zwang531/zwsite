@@ -19,21 +19,53 @@
     $studio_name = $_REQUEST['studio_name'];
     $year = $_REQUEST['year'];
     $dollar_value = $_REQUEST['dollar_value'];
+    
+    $upload = false;
+    $target_dir = "img/";
+    $target_file = "" . $poster;
+
+    if ($action == 'Add' || $action = 'Update'){
+        if (strpos($poster, 'img/') == false){
+            
+            $target_file = $target_dir . basename($_FILES["poster"]["name"]);
+            if (file_exists($target_file) || $_FILES["poster"]["size"] > 500000){
+                // TODO: should print error msg somewhere
+
+            }
+            else{
+                $upload = move_uploaded_file($_FILES["poster"]["tmp_name"], $target_file);
+                if ($upload == false) {
+                    // TODO: should print error msg somewhere
+                    
+                } 
+            }
+        }
+    }
 	
 	if ($action == 'Add') {
 	   
 	   // SHOULD HAVE VALIDATION HERE!?
-		
-	
-	   $sql = "INSERT INTO movies (movie_title,studio_name,year,dollar_value,poster) VALUES ('$movie_title' , '$studio_name' , '$year' , '$dollar_value', '$poster')";
+		if ($upload == true){
+            $sql = "INSERT INTO movies (movie_title,studio_name,year,dollar_value,poster) VALUES ('$movie_title' , '$studio_name' , '$year' , '$dollar_value', '$target_file')";
+        }
+        else{
+            $sql = "INSERT INTO movies (movie_title,studio_name,year,dollar_value,poster) VALUES ('$movie_title' , '$studio_name' , '$year' , '$dollar_value', '$poster')";
+        }
+        
 	   $result = mysqli_query($conn, $sql);
 		
 		
 	} else if ($action == "Update") {
         
        $id = $_REQUEST['id'];
+        
+        if ($upload == true){
+            $sql = "UPDATE movies SET movie_title='" .$movie_title."' ,studio_name='".$studio_name."' ,year='".$year."' ,dollar_value='".$dollar_value."' ,poster='".$target_file."' WHERE id='".$id."'";
+        }
+        else{
+            $sql = "UPDATE movies SET movie_title='" .$movie_title."' ,studio_name='".$studio_name."' ,year='".$year."' ,dollar_value='".$dollar_value."' WHERE id='".$id."'";
+        }
 	
-	   $sql = "UPDATE movies SET movie_title='" .$movie_title."' ,studio_name='".$studio_name."' ,year='".$year."' ,dollar_value='".$dollar_value."' WHERE id='".$id."'";
        $result = mysqli_query($conn, $sql);
 		
 	}  else if ($action == "Delete") {
