@@ -15,7 +15,7 @@
 	
 <h1>Box Office</h1>
 
-<form action="/edit" method="POST">
+<br><form action="/edit" method="POST">
 	<input type="submit" name="action" value="Add" class="btn btn-primary">
 </form><br>  
         
