@@ -20,7 +20,7 @@
     $target_dir = "img/";
     $target_file = "" . $poster;
 
-    if ($action == 'Add' || $action = 'Update'){
+    if ($action == 'Add' || $action == 'Update'){
         if (strpos($poster, 'img/') == false){
             
             $target_file = $target_dir . basename($_FILES["poster"]["name"]);
