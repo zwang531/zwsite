@@ -12,14 +12,22 @@
     }
     
 	$action = $_REQUEST['action'];
-
-    $poster = $_REQUEST['poster'];
-    if ($poster == "") $poster = "img/unknown.png";
-    $movie_title = $_REQUEST['movie_title'];
-    $studio_name = $_REQUEST['studio_name'];
-    $year = $_REQUEST['year'];
-    $dollar_value = $_REQUEST['dollar_value'];
     
+    $poster = '';
+    $movie_title = '';
+    $studio_name = '';
+    $year = '';
+    $dollar_value = '';
+    
+    if ($action !== 'Delete'){
+        $poster = $_REQUEST['poster'];
+        if ($poster == "") $poster = "img/unknown.png";
+        $movie_title = $_REQUEST['movie_title'];
+        $studio_name = $_REQUEST['studio_name'];
+        $year = $_REQUEST['year'];
+        $dollar_value = $_REQUEST['dollar_value'];
+    }
+
     $upload = false;
     $target_dir = "img/";
     $target_file = "" . $poster;
