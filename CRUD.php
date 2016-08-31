@@ -28,9 +28,42 @@
     if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
     }
+
+
+    //pagination
+    $page = $_GET["page"];
+    $entry = $_GET["entry"];
+
+    if($entry == "" || $entry == "5")
+    {
+	$e = 5;
+	$entry = "5";
+    }
+    elseif($entry == "10")
+	$e = 10;
+    elseif($entry == "20")
+	$e = 20;
+    elseif($entry == "all" || $entry == "-1")
+	$e = -1;
+
+    if($page == "" || $page == "1")
+    {
+	$p = 0;
+	$page = "1";
+    }
+    else
+    {	
+	$p = ($page * $e) - $e;
+    }
+
+    // FORM AND EXECUTE SOME QUERY
+
+    if($e != -1)
+	$sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC LIMIT $p,$e";
+    else
+	$sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC";
     
     // FORM AND EXECUTE SOME QUERY
-    $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC";
     $result = mysqli_query($conn, $sql);
     
     // USE THE QUERY RESULT
@@ -44,8 +77,8 @@
     $curr_year = '';
     $curr_dollar_value = '';
     
-    if (mysqli_num_rows($result) > 0) {
-    
+    $count = mysqli_num_rows($result);
+    if ($count > 0) {
     
       while($row = mysqli_fetch_assoc($result)) {
           
@@ -79,8 +112,86 @@
 	    print "<tr><td colspan='5'>No Data</td></tr>";
     }
     
-   print "</table>"
+    print "</table>"
+
+    $sql = "SELECT * FROM movies";
+    $result = mysqli_query($conn, $sql);
+    $count = mysqli_num_rows($result);
+    if($e != -1)
+	$max_page = ceil($count/$e);
+    else
+	$max_page = 1;
 ?>
+
+    <!-- pagination markup -->
+    <nav aria-label="Page navigation">
+      <ul class="pagination pagination-lg">
+        <li>
+          <a href="CRUD.php?page=<?php
+
+	    if($page == "1" || $page == "")
+		print "1";
+	    else
+		print strval(intval($page)-1);
+
+	    print "&entry=$e";
+
+	  ?>" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+	<?php
+	    for($i=1;$i<=$max_page;$i++)
+	
+	    {
+		print "<li><a href=\"CRUD.php?page=$i&entry=$e\">$i</a></li>\n";
+		
+	    }
+	?>
+        <li>
+          <a href="CRUD.php?page=<?php 
+	    
+	    if($page == "1" || $page == "")
+	    {	
+		$page = "1";
+		$page_temp = intval($page)+1; 
+		if($page_temp > $max_page)
+		    print $max_page;
+		else
+		    print strval($page_temp);
+
+		print "&entry=$e";
+	    }
+	    else
+	    {
+		$page_temp = intval($page)+1; 
+		if($page_temp > $max_page)
+		    print $max_page;
+		else
+		    print strval($page_temp);
+
+		print "&entry=$e";
+	    }
+	  
+	  ?>" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+
+    <div class="dropdown">
+	<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">entries per page<span class="caret"></span></button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=5">5</a></li>
+	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=10">10</a></li>
+	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=20">20</a></li>
+	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=all">All</a></li>
+	</ul>
+    </div>
+
+    <br>
 
 <form action="/edit" method="POST">
 	<input type="submit" name="action" value="Add" class="btn btn-lg btn-primary">
