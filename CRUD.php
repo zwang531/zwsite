@@ -35,8 +35,12 @@
 
 
     //pagination
-    $page = $_GET["page"];
-    $entry = $_GET["entry"];
+    $page = '';
+    if(isset($_GET["page"])) 
+        $page = $_GET["page"];
+    $entry = '';
+    if(isset($_GET["entry"])) 
+        $entry = $_GET["entry"];
 
     if($entry == "" || $entry == "5")
     {
@@ -255,9 +259,9 @@
 
 	       <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
            <button type="submit" id="deleteBtn" class="btn btn-primary" name="action" value="Delete">Delete</button>
-<!--
-	       <input type="hidden" name="id" value="<?= $curr_id ?>">
 
+	       <input type="hidden" name="id" value="<?= $curr_id ?>">
+<!--
 	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
 -->
 
