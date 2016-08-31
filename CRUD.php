@@ -235,7 +235,7 @@
     
     <script>
         function setID(clicked_id){
-            document.getElementById("id").setAttribute('value' = $id);
+            document.getElementById("id").setAttribute('value' = "$id");
         }
     </script>
 
