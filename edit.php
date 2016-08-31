@@ -65,7 +65,6 @@ session_start();
         END;
     }
 ?>
-<?php } ?>
 
 <form action="/action" method="POST" class="form" enctype="multipart/form-data">
 	<div class="form-group">
@@ -105,4 +104,4 @@ session_start();
 </div>
 
 </body>
-</html>
+</html><?php } ?>
