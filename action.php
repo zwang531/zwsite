@@ -56,7 +56,7 @@
             $err .= "Box Office $ should be positive!";
         }
         if(err != '') {
-            $err = "Invalid Inputs:<br>" . $err;
+            $err = "Invalid inputs:<br>" . $err;
             die($err);
         }
         
@@ -92,7 +92,7 @@
             $err .= "Box Office $ should be positive!";
         }
         if(err != '') {
-            $err = "Invalid Inputs:<br>" . $err;
+            $err = "Invalid inputs:<br>" . $err;
             die($err);
         }
                 
