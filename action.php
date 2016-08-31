@@ -1,6 +1,6 @@
 <?php
 session_start();
-unset($_SESSION['username']);
+unset($_SESSION['err_msg']);
 session_destroy();
 
 	define('DB_USER','root');
