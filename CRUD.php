@@ -40,15 +40,16 @@
 
     if($entry == "" || $entry == "5")
     {
-	$e = 5;
-	$entry = "5";
+	   $e = 5;
+	   $entry = "5";
     }
-    elseif($entry == "10")
-	$e = 10;
-    elseif($entry == "20")
-	$e = 20;
-    elseif($entry == "all" || $entry == "-1")
-	$e = -1;
+    else if($entry == "10") $e = 10;
+    else if($entry == "20") $e = 20;
+    else if($entry == "all" || $entry == "-1") $e = -1;
+    else{
+        $e = 5;
+        $entry = "5";
+    }
 
     if($page == "" || $page == "1")
     {
