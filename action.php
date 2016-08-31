@@ -42,6 +42,10 @@
         $dollar_value = $_REQUEST['dollar_value'];
 	   
 	   // SHOULD HAVE VALIDATION HERE!?
+        if(is_int($year)==false){
+            die("invalid year");
+        }
+        
 		if ($upload == true){
             $sql = "INSERT INTO movies (movie_title,studio_name,year,dollar_value,poster) VALUES ('$movie_title' , '$studio_name' , '$year' , '$dollar_value', '$target_file')";
         }
