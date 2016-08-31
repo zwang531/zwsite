@@ -62,8 +62,10 @@ session_start();
         print <<< END
             <div class='alert alert-danger' role='alert'>
                 <strong>Oops!</strong><br>$block</div> 
-        END;}endif;
+        END;
+    }
 ?>
+<?php } ?>
 
 <form action="/action" method="POST" class="form" enctype="multipart/form-data">
 	<div class="form-group">
