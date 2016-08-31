@@ -112,7 +112,7 @@
 	    print "<tr><td colspan='5'>No Data</td></tr>";
     }
     
-    print "</table>"
+    print "</table>";
 
     $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC";
     $result = mysqli_query($conn, $sql);
