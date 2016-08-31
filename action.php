@@ -51,7 +51,7 @@
         }
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
             $err .= "\nText Fields contain HTMP or PHP tags!";
-        }
+        }   
         if(err != '') die($err);
         
 		if ($upload == true){
