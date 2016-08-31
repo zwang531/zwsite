@@ -65,7 +65,9 @@
     else
     {	
 	   if(intval($page) > $max_page || intval($page) < 1)
-           $p = ($max_page * $e) - $e;
+       {    $p = 0;
+            $page = "1";
+       }
        else
             $p = ($page * $e) - $e;    
     }
