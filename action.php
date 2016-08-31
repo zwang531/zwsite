@@ -42,7 +42,7 @@
         $dollar_value = $_REQUEST['dollar_value'];
 	   
 	   // SHOULD HAVE VALIDATION HERE!?
-        if(is_int($year)==false){
+        if($year<1900 || $year>2100){
             die("invalid year");
         }
         
