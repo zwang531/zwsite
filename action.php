@@ -42,9 +42,20 @@
         $dollar_value = $_REQUEST['dollar_value'];
 	   
 	   // SHOULD HAVE VALIDATION HERE!?
-        if($year<1900 || $year>2100){
-            die("invalid year");
+        $err = '';
+        if($year<1900 || $year>2020){
+            $err .= "Year should be within range 1900-2100!";
         }
+        if($dollar_value < 0){
+            $err .= "\nBox Office $ should be positive!"
+        }
+        if(strpos($movie_title, 'script>')!=false || strpos($movie_title, '<?php')!=false){
+            $err .= "\nMovie Title contains invalid input!";
+        }
+        if(strpos($studio_name, '<script>')!=false || strpos($studio_name, '<?php')!=false){
+            $err .= "\nStudio field contains invalid input!";
+        }
+        if(err != '') die($err);
         
 		if ($upload == true){
             $sql = "INSERT INTO movies (movie_title,studio_name,year,dollar_value,poster) VALUES ('$movie_title' , '$studio_name' , '$year' , '$dollar_value', '$target_file')";
@@ -65,9 +76,20 @@
         
        $id = $_REQUEST['id'];
         
-        if($year<1900 || $year>2100){
-            die("invalid year");
+        $err = '';
+        if($year<1900 || $year>2020){
+            $err .= "Year should be within range 1900-2100!";
         }
+        if($dollar_value < 0){
+            $err .= "\nBox Office $ should be positive!"
+        }
+        if(strpos($movie_title, 'script>')!=false || strpos($movie_title, '<?php')!=false){
+            $err .= "\nMovie Title contains invalid input!";
+        }
+        if(strpos($studio_name, '<script>')!=false || strpos($studio_name, '<?php')!=false){
+            $err .= "\nStudio field contains invalid input!";
+        }
+        if(err != '') die($err);
                 
         if ($upload == true){
             $sql = "UPDATE movies SET movie_title='" .$movie_title."' ,studio_name='".$studio_name."' ,year='".$year."' ,dollar_value='".$dollar_value."' ,poster='".$target_file."' WHERE id='".$id."'";
