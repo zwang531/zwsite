@@ -50,15 +50,24 @@
         $e = 5;
         $entry = "5";
     }
+    
+    $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC";
+    $result = mysqli_query($conn, $sql);
+    $count = mysqli_num_rows($result);
+    if($e != -1) $max_page = ceil($count/$e);
+    else $max_page = 1;
 
     if($page == "" || $page == "1")
     {
-	$p = 0;
-	$page = "1";
+	   $p = 0;
+	   $page = "1";
     }
     else
     {	
-	$p = ($page * $e) - $e;
+	   if(intval($page) > $max_page || intval($page) < 1)
+           $p = ($max_page * $e) - $e;
+       else
+            $p = ($page * $e) - $e;    
     }
 
     // FORM AND EXECUTE SOME QUERY
@@ -122,10 +131,8 @@
     $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC";
     $result = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($result);
-    if($e != -1)
-	$max_page = ceil($count/$e);
-    else
-	$max_page = 1;
+    if($e != -1) $max_page = ceil($count/$e);
+    else $max_page = 1;
 ?>
         
     <!-- pagination markup -->
@@ -134,12 +141,9 @@
         <li>
           <a href="CRUD?page=<?php
 
-	    if($page == "1" || $page == "")
-		print "1";
-	    else
-		print strval(intval($page)-1);
-
-	    print "&entry=$e";
+	    if($page == "1" || $page == "") print "1";
+	    else print strval(intval($page)-1);
+        print "&entry=$e";
 
 	  ?>" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
@@ -147,9 +151,8 @@
         </li>
 	<?php
 	    for($i=1;$i<=$max_page;$i++)
-	
 	    {
-		print "<li><a href=\"CRUD.php?page=$i&entry=$e\">$i</a></li>\n";
+		  print "<li><a href=\"CRUD.php?page=$i&entry=$e\">$i</a></li>\n";
 		
 	    }
 	?>
@@ -158,11 +161,11 @@
 	    
 	    if($page == "1" || $page == "")
 	    {	
-		$page = "1";
-		$page_temp = intval($page)+1; 
-		if($page_temp > $max_page)
+		  $page = "1";
+		  $page_temp = intval($page)+1; 
+		  if($page_temp > $max_page)
 		    print $max_page;
-		else
+		  else
 		    print strval($page_temp);
 
 		print "&entry=$e";
