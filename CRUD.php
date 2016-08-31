@@ -122,6 +122,10 @@
     else
 	$max_page = 1;
 ?>
+
+<form action="/edit" method="POST" style="float:right;">
+	<input type="submit" name="action" value="Add" class="btn btn-primary">
+</form>
         
     <!-- pagination markup -->
     <nav aria-label="Page navigation">
@@ -190,11 +194,6 @@
 	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=all">All</a></li>
 	</ul>
     </div>
-
-
-<form action="/edit" method="POST" style="float:right;">
-	<input type="submit" name="action" value="Add" class="btn btn-primary">
-</form>
     
 <br><br>
 <hr>
