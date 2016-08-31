@@ -56,15 +56,15 @@ session_start();
 	
 <h1><?= $action ?> Record</h1>
 
-<script language="php"> 
+<?php
     if(isset($_SESSION['err_msg'])){
         print <<< END
             <div class="alert alert-danger" role="alert">
-                <strong>Oops!</strong><br>$_SESSION['err_msg']
-            </div>
-        END;
+                <strong>Oops!</strong><br>END;
+        print($_SESSION['err_msg']);
+        print("</div>");
     }
-</script> 
+?>
 
 <form action="/action" method="POST" class="form" enctype="multipart/form-data">
 	<div class="form-group">
