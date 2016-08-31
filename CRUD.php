@@ -124,7 +124,7 @@
 ?>
 
 <form action="/edit" method="POST" style="float:right;">
-	<input type="submit" name="action" value="Add" class="btn btn-primary">
+	<input type="submit" name="action" value="Add" class="btn btn-lg btn-primary">
 </form>
         
     <!-- pagination markup -->
