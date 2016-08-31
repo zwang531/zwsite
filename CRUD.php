@@ -37,6 +37,8 @@
     print "<table class='table'>";
     print "<tr><th>Poster</th><th>Movie Title</th><th>Studio</th><th>Year</th><th>Box Office $</th><th></th></tr>";   
     
+    $curr_id = '';
+    
     if (mysqli_num_rows($result) > 0) {
     
     
@@ -53,7 +55,7 @@
 	    print "<div class='col-sm-6'><form action='/edit' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'>
 	    <div class='form-group'><button type='submit' name='action' value='Update' class='btn btn-default'>
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
-	    
+	    $curr_id = $row['id'];
 	    print "<div class='col-sm-6'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value=delete' data-toggle='modal' data-target='#deleteModal'>
   <span class='glyphicon glyphicon-trash'></span></button></div></div>";
 
@@ -91,12 +93,11 @@
         <div class="modal-footer">
           <form action="/action" method="POST">
 
-	       <input type="hidden" name="id" value="<?= $row['id'] ?>">
+	       <input type="hidden" name="id" value="<?= $curr_id ?>">
 
 	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
 
           </form>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </div>
       
