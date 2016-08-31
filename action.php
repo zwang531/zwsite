@@ -45,6 +45,8 @@
         $studio_name = $_REQUEST['studio_name'];
         $year = $_REQUEST['year'];
         $dollar_value = $_REQUEST['dollar_value'];
+        $poster = $_REQUEST['poster'];
+        if ($poster == "") $poster = "img/unknown.png";
 	   
 	   // SHOULD HAVE VALIDATION HERE!?
 		if ($upload == true){
@@ -63,6 +65,8 @@
         $studio_name = $_REQUEST['studio_name'];
         $year = $_REQUEST['year'];
         $dollar_value = $_REQUEST['dollar_value'];
+        $poster = $_REQUEST['poster'];
+        if ($poster == "") $poster = "img/unknown.png";
         
        $id = $_REQUEST['id'];
         

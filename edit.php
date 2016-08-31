@@ -25,7 +25,7 @@
       die("Connection failed: " . mysqli_connect_error());
     }
     
-    $sql = "SELECT poster, movie_title, studio_name, year, dollar_value FROM movies where id = ".$id;
+    $sql = "SELECT movie_title, studio_name, year, dollar_value, poster FROM movies where id = ".$id;
     $result = mysqli_query($conn, $sql);
 
     while($row = mysqli_fetch_assoc($result)) {
