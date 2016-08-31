@@ -65,6 +65,10 @@
         
        $id = $_REQUEST['id'];
         
+        if($year<1900 || $year>2100){
+            die("invalid year");
+        }
+                
         if ($upload == true){
             $sql = "UPDATE movies SET movie_title='" .$movie_title."' ,studio_name='".$studio_name."' ,year='".$year."' ,dollar_value='".$dollar_value."' ,poster='".$target_file."' WHERE id='".$id."'";
         }
