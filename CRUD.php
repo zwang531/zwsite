@@ -5,6 +5,8 @@
 <title>CRUD</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 </head>
 <body>
@@ -52,7 +54,7 @@
 	    <div class='form-group'><button type='submit' name='action' value='Update' class='btn btn-default'>
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
 	    
-	    print "<div class='col-sm-6'><form action='/delete' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value=delete'>
+	    print "<div class='col-sm-6'><form action='/delete' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value=delete' data-toggle='modal' data-target='#deleteModal'>
   <span class='glyphicon glyphicon-trash'></span></button></div></form></div>";
 
   	    print "</div></td></tr>\n";
@@ -72,6 +74,35 @@
 <br><br>
 <hr>
 <br><br>
+    
+<!-- Modal -->
+  <div class="modal fade" id="deleteModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Warning!</h4>
+        </div>
+        <div class="modal-body">
+          <p>Do you really want to delete it permanently?</p>
+        </div>
+        <div class="modal-footer">
+          <form action="/action" method="POST">
+
+	       <input type="hidden" name="id" value="<?= $row['id'] ?>">
+
+	       <input type="submit" name="action" value="Delete" class="btn btn-primary">
+	
+	       <input type="submit" name="action" value="Cancel" class="btn btn-default">
+
+    </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
 <div class="alert alert-danger" role="alert">
 	<h2>Things Missing</h2>
