@@ -127,7 +127,7 @@
     <nav aria-label="Page navigation">
       <ul class="pagination">
         <li>
-          <a href="CRUD.php?page=<?php
+          <a href="CRUD?page=<?php
 
 	    if($page == "1" || $page == "")
 		print "1";
