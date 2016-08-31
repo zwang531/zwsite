@@ -72,7 +72,9 @@
 		
 	}  else if ($action == "Delete") {
         
-        $sql = "SELECT poster FROM movies where id = ".$_POST['id'];
+        $id = $_POST['id'];
+        
+        $sql = "SELECT poster FROM movies where id = ".$id;
         $result = mysqli_query($conn, $sql);
 		while($row = mysqli_fetch_assoc($result)) {
             $poster = $row['poster'];
@@ -81,7 +83,7 @@
              unlink($poster);
          }
   		
-       $sql = "DELETE FROM movies WHERE id='".$_POST['id']."'"; 
+       $sql = "DELETE FROM movies WHERE id='".$id."'"; 
        $result = mysqli_query($conn, $sql);
 
 		
