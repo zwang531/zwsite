@@ -14,6 +14,10 @@
 <div class="container">
 	
 <h1>Box Office</h1>
+
+<form action="/edit" method="POST">
+	<input type="submit" name="action" value="Add" class="btn btn-lg btn-primary">
+</form><br>
         
 <?php
     
@@ -122,10 +126,6 @@
     else
 	$max_page = 1;
 ?>
-
-<form action="/edit" method="POST" style="float:right; margin-right:%10;">
-	<input type="submit" name="action" value="Add" class="btn btn-lg btn-primary">
-</form>
         
     <!-- pagination markup -->
     <nav aria-label="Page navigation">
