@@ -52,8 +52,8 @@
 	    <div class='form-group'><button type='submit' name='action' value='Update' class='btn btn-default'>
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
 	    
-	    print "<div class='col-sm-6'><button type='button' class='btn btn-default' data-toggle='modal' data-target='#confirmDelete'>
-  <span class='glyphicon glyphicon-trash'></span></button></div>";
+	    print "<div class='col-sm-6'><form action='delete.php' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value=delete'>
+  <span class='glyphicon glyphicon-trash'></span></button></div></form></div>";
 
   	    print "</div></td></tr>\n";
 
@@ -72,27 +72,6 @@
 <br><br>
 <hr>
 <br><br>
-
-<!-- Modal -->
-<div class="modal fade" id="confirmDelete" role="dialog">
-  <div class="modal-dialog">
-      
-    <div class="modal-content">
-        
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Confirm Delete?</h4>
-        </div>
-        <div class="modal-footer">
-            <form action="/action" method="POST" class='form-horizontal'><input type='hidden' name='id' value="<?= $row['id'] ?>">
-              <input type="submit" name="action" value="Delete" class="btn btn-primary">
-            </form>
-        </div>
-        
-    </div>
-      
-  </div>
-</div>
 
 <div class="alert alert-danger" role="alert">
 	<h2>Things Missing</h2>
