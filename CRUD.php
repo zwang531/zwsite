@@ -52,8 +52,8 @@
 	    <div class='form-group'><button type='submit' name='action' value='Update' class='btn btn-default'>
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
 	    
-	    print "<div class='col-sm-6'><div class='form-group'><button type='button' class='btn btn-default' data-toggle='modal' data-target='#confirmDelete'>
-  <span class='glyphicon glyphicon-trash'></span></button></div></div>";
+	    print "<div class='col-sm-6'><button type='button' class='btn btn-default' data-toggle='modal' data-target='#confirmDelete'>
+  <span class='glyphicon glyphicon-trash'></span></button></div>";
 
   	    print "</div></td></tr>\n";
 
