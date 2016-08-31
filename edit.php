@@ -36,7 +36,8 @@ $id = '';
      $year = $row['year'];
      $dollar_value = $row['dollar_value'];
 	}
-	 
+     
+	 mysqli_close($conn);
  }
 ?>
 <!DOCTYPE html>

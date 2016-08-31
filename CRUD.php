@@ -106,12 +106,16 @@
 	    print "<div class='col-sm-6'><form action='/edit' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'>
 	    <div class='form-group'><button type='submit' name='action' value='Update' class='btn btn-default'>
   <span class='glyphicon glyphicon-pencil'></span></button></div></form></div>";
+          
+          print "<div class='col-sm-6'><form action='/delete' method='POST' class='form-horizontal'><input type='hidden' name='id' value='".$row['id']."'>
+	    <div class='form-group'><button type='submit' name='action' value='delete' class='btn btn-default'>
+  <span class='glyphicon glyphicon-trash'></span></button></div></form></div>";
 	    
           $tmp_id = $row['id'];
-          
+/*          
 	    print "<div class='col-sm-6'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value=delete' data-toggle='modal' data-target='#deleteModal'>
   <span class='glyphicon glyphicon-trash'></span></button></div></div>";
-
+*/
   	    print "</div></td></tr>\n";
 
       }
@@ -126,6 +130,8 @@
     $count = mysqli_num_rows($result);
     if($e != -1) $max_page = ceil($count/$e);
     else $max_page = 1;
+    
+    mysqli_close($conn);
 ?>
         
     <!-- pagination markup -->
@@ -195,7 +201,7 @@
 <br><br>
 <hr>
 <br><br>
-    
+
 <!-- Delete Modal -->
   <div class="modal fade" id="deleteModal" role="dialog">
     <div class="modal-dialog">
