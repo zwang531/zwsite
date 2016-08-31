@@ -49,11 +49,8 @@
         if($dollar_value < 0){
             $err .= "\nBox Office $ should be positive!";
         }
-        if(strpos($movie_title, 'script>')!=false || strpos($movie_title, '<?php')!=false){
-            $err .= "\nMovie Title contains invalid input!";
-        }
-        if(strpos($studio_name, '<script>')!=false || strpos($studio_name, '<?php')!=false){
-            $err .= "\nStudio field contains invalid input!";
+        if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
+            $err .= "\nText Fields contain HTMP or PHP tags!";
         }
         if(err != '') die($err);
         
@@ -83,11 +80,8 @@
         if($dollar_value < 0){
             $err .= "\nBox Office $ should be positive!";
         }
-        if($movie_title != strip_tags($movie_title)){
-            $err .= "\nMovie Title contains HTMP or PHP tags!";
-        }
-        if($studio_name != strip_tags($studio_name)){
-            $err .= "\nStudio field contains HTMP or PHP tags!";
+        if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
+            $err .= "\nText Fields contain HTMP or PHP tags!";
         }
         if(err != '') die($err);
                 
