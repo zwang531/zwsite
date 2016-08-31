@@ -61,7 +61,8 @@ session_start();
         $block = $_SESSION['err_msg'];
         print <<< END
             <div class="alert alert-danger" role="alert">
-                <strong>Oops!</strong><br>$block</div>END;
+                <strong>Oops!</strong><br>$block</div> 
+        END;
     }
 ?>
 
