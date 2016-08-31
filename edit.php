@@ -58,11 +58,10 @@ session_start();
 
 <?php
     if(isset($_SESSION['err_msg'])){
+        $block = $_SESSION['err_msg'];
         print <<< END
             <div class="alert alert-danger" role="alert">
-                <strong>Oops!</strong><br>END;
-        print($_SESSION['err_msg']);
-        print("</div>");
+                <strong>Oops!</strong><br>$block</div>END;
     }
 ?>
 
