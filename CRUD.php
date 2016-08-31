@@ -74,10 +74,8 @@
 
     // FORM AND EXECUTE SOME QUERY
 
-    if($e != -1)
-	$sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC LIMIT $p,$e";
-    else
-	$sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC";
+    if($e != -1) $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC LIMIT $p,$e";
+    else $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY id ASC";
     
     // FORM AND EXECUTE SOME QUERY
     $result = mysqli_query($conn, $sql);
@@ -174,13 +172,13 @@
 	    }
 	    else
 	    {
-		$page_temp = intval($page)+1; 
-		if($page_temp > $max_page)
+		  $page_temp = intval($page)+1; 
+		  if($page_temp > $max_page)
 		    print $max_page;
-		else
+		  else
 		    print strval($page_temp);
 
-		print "&entry=$e";
+		  print "&entry=$e";
 	    }
 	  
 	  ?>" aria-label="Next">

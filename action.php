@@ -21,6 +21,10 @@
 
     if ($action == 'Add' || $action == 'Update'){
         $filename = basename($_FILES["poster"]["name"]);
+        if(strlen($filename) > 65){
+            $err = "Invalid inputs:<br>Upload File Name is resctircted to maximum 65 charactors!";
+            die($err);
+        }
         if($filename != ''){
             $target_file = $target_dir . $filename;
             if (file_exists($target_file))
@@ -46,6 +50,16 @@
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
             if($err != '') $err .= "<br>";
             $err .= "Text Fields contain HTMP or PHP tags!";
+        }
+        else{
+            if(strlen($movie_title) > 65){
+                if($err != '') $err .= "<br>";
+                $err .= "Movie Title is resctircted to maximum 65 charactors!";
+            }
+            if(strlen($studio_name) > 35){
+                if($err != '') $err .= "<br>";
+                $err .= "Studio field is resctircted to maximum 35 charactors!";
+            }
         }
         if($year!=0 && ($year<1900 || $year>2020)){
             if($err != '') $err .= "<br>";
@@ -82,6 +96,16 @@
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
             if($err != '') $err .= "<br>";
             $err .= "Text Fields contain HTMP or PHP tags!";
+        }
+        else{
+            if(strlen($movie_title) > 65){
+                if($err != '') $err .= "<br>";
+                $err .= "Movie Title is resctircted to maximum 65 charactors!";
+            }
+            if(strlen($studio_name) > 35){
+                if($err != '') $err .= "<br>";
+                $err .= "Studio field is resctircted to maximum 35 charactors!";
+            }
         }
         if($year!=0 && ($year<1900 || $year>2020)){
             if($err != '') $err .= "<br>";
