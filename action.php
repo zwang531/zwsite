@@ -18,7 +18,7 @@
             $err = "Invalid inputs:<br>Upload File Name is resctircted to maximum 65 charactors!";
             //die($err);
         }
-        if($filename != '' && $err != ''){
+        if($filename != '' && $err == ''){
             $target_file = $target_dir . $filename;
             if (file_exists($target_file))
                 $poster = '' . $target_file;
@@ -66,7 +66,7 @@
             $err = "Invalid inputs:<br>" . $err;
             //die($err);
         }
-        if($err != ''){
+        if($err == ''){
 		if ($upload == true){
             $sql = "INSERT INTO movies (movie_title,studio_name,year,dollar_value,poster) VALUES ('$movie_title' , '$studio_name' , '$year' , '$dollar_value', '$target_file')";
         }
@@ -112,7 +112,8 @@
             $err = "Invalid inputs:<br>" . $err;
             die($err);
         }
-        if($err != ''){        
+        
+        if($err == ''){        
         if ($upload == true){
             $sql = "UPDATE movies SET movie_title='" .$movie_title."' ,studio_name='".$studio_name."' ,year='".$year."' ,dollar_value='".$dollar_value."' ,poster='".$target_file."' WHERE id='".$id."'";
         }
@@ -122,7 +123,8 @@
 	
        $result = mysqli_query($conn, $sql);
         }
-	}  else if ($action == "Delete") {
+	}  
+    else if ($action == "Delete") {
         
         $id = $_POST['id'];
         
@@ -141,7 +143,7 @@
 		
 	}
     
-    if($err!='')
+    if($err=='')
 	   header('Location: CRUD.php');
 	
 ?>
