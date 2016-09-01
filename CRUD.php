@@ -217,7 +217,7 @@
 	  	    <input type="hidden" name="user_id" id="deleteConfirm_user_id" value="">
 	  	
 	  	    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <button type="button" id="deleteBtn" class="btn btn-primary" value="Delete">Delete</button>
+            <input type="submit" name="action" value="Delete" class="btn btn-primary">
           </form>
         </div>
       </div>
@@ -231,7 +231,6 @@
     
     function confirmDelete(id) {
 	  $("#deleteConfirm_user_id").attr('value',id);
-	  $('#deleteModal').modal('show');  
 	
 	}; /* confirmDelete*/
     
