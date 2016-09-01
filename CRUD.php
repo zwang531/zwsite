@@ -117,10 +117,12 @@
     
     // USE THE QUERY RESULT 
     print "<table class='table'>";
-    print "<tr><th><a href=\"CRUD?nosort=false&sorting=$sort&field=first_name&page=$current_page&entry=$e\">First Name</a></th>
-	   <th><a href=\"CRUD?nosort=false&sorting=$sort&field=last_name&page=$current_page&entry=$e\">Last Name</a></th>
-	   <th><a href=\"CRUD?nosort=false&sorting=$sort&field=login&page=$current_page&entry=$e\">Login</a></th>
-	   <th><a href=\"CRUD?nosort=false&sorting=$sort&field=password&page=$current_page&entry=$e\">Password</a></th><th></th></tr>";  
+    print "<tr><th>Poster</th>
+    <th><a href=\"CRUD?nosort=false&sorting=$sort&field=movie_title&page=$current_page&entry=$e\">Movie Title</a></th>
+    <th><a href=\"CRUD?nosort=false&sorting=$sort&field=studio_name&page=$current_page&entry=$e\">Studio</a></th>
+    <th><a href=\"CRUD?nosort=false&sorting=$sort&field=year&page=$current_page&entry=$e\">Year</a></th>
+    <th><a href=\"CRUD?nosort=false&sorting=$sort&field=dollar_value&page=$current_page&entry=$e\">Box Office $</a></th>
+    <th></th></tr>";
     
     $tmp_id = '';
     
