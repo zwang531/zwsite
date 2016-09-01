@@ -133,7 +133,7 @@
 		
 	}  else if ($action == "Delete") {
         
-        $id = $_POST['id'];
+        $id = $_POST['id'];die($id);
         
         $sql = "SELECT poster FROM movies where id = ".$id;
         $result = mysqli_query($conn, $sql);
