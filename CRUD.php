@@ -59,20 +59,14 @@
 
     }
     else
-	   $field = "first_name";
+	$field = "first_name";
     
     //pagination
-    /*
     $page = $entry = '';
     if (isset($_GET["page"]))
         $page = $_GET["page"];
     if (isset($_GET["entry"]))
         $entry = $_GET["entry"];
-        */
-    
-    $page = $_GET["page"];
-    $entry = $_GET["entry"];
-    
 
     if($entry == "" || $entry == "5")
     {
@@ -117,7 +111,7 @@
 
     if($e != -1) $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY $field $sort LIMIT $p,$e";
     else $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY $field $sort";
-    
+echo($sql);
     // FORM AND EXECUTE SOME QUERY
     $result = mysqli_query($conn, $sql);
     
@@ -132,7 +126,7 @@
     
     $count = mysqli_num_rows($result);
     if ($count > 0) {
-    
+        
       while($row = mysqli_fetch_assoc($result)) {
     
 	    print "<tr>";
