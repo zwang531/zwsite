@@ -112,12 +112,18 @@
         else if(strlen($movie_title) > 65){
             $err .= "Movie Title is resctircted to maximum 65 charactors!%";
         }
+        else if(strlen($movie_title) == 0){
+            $err .= "Movie Title cannot be null!%";
+        }
         
         if($studio_name != strip_tags($studio_name)){
             $err .= "Studio field contains HTMP or PHP tags!%";
         }
         else if(strlen($studio_name) > 35){
             $err .= "Studio field is resctircted to maximum 35 charactors!%";
+        }
+        else if(strlen($studio_name) == 0){
+            $err .= "Studio field cannot be null!%";
         }
         /*
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
