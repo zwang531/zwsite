@@ -183,8 +183,8 @@
 	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=all">All</a></li>
 	</ul>
     </div>
-<!--    
-<br><br>
+   
+<br><br><!-- 
 <hr>
 <br><br>
 -->
