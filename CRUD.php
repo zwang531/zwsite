@@ -202,7 +202,7 @@
 <br><br>
 
 <!-- Delete Modal -->
-  <div class="modal fade" id="deleteModal" role="dialog">
+  <div class="modal fade" id="nodeleteModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -226,6 +226,32 @@
       
     </div>
   </div>
+    
+<!-- Delete modal -->
+<div id="deleteModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="deleteModalLabel">Confirm Delete</h4>
+      </div>
+      
+      
+      
+      <div class="modal-footer">
+
+      <form>
+	  	<input type="hidden" name="user_id" id="deleteConfirm_user_id" value="">
+	  	
+	  	<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" id="deleteBtn" class="btn btn-primary" value="Delete">Delete</button>
+
+       </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
     
 <script>
     var SBC = {};
