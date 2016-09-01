@@ -113,7 +113,7 @@
 	    
           $tmp_id = $row['id'];
 */          
-	    print "<div class='col-sm-6'><button type='button' class='btn btn-default' onclick='SBC.confirmDelete(".$row['id'].");' name='action' value=delete' data-toggle='modal' data-target='#deleteModal'>
+	    print "<div class='col-sm-6'><button type='button' class='btn btn-default' onclick='SBC.confirmDelete(".$row['id'].");' data-toggle='modal' data-target='#deleteModal'>
   <span class='glyphicon glyphicon-trash'></span></button></div>";
 
   	    print "</div></td></tr>\n";
@@ -202,7 +202,7 @@
 <br><br>
 
 <!-- Delete Modal -->
-  <div class="modal fade" id="nodeleteModal" role="dialog">
+  <div class="modal fade" id="deleteModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -227,32 +227,6 @@
     </div>
   </div>
     
-<!-- Delete modal -->
-<div id="deleteModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="deleteModalLabel">Confirm Delete</h4>
-      </div>
-      
-      
-      
-      <div class="modal-footer">
-
-      <form>
-	  	<input type="hidden" name="user_id" id="deleteConfirm_user_id" value="">
-	  	
-	  	<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" id="deleteBtn" class="btn btn-primary" value="Delete">Delete</button>
-
-       </form>
-      </div>
-      
-    </div>
-  </div>
-</div>
-    
 <script>
     var SBC = {};
     
@@ -270,7 +244,7 @@
 				
 		$.ajax({
          type: "DELETE",
-         url: "./api.php/"+id,
+         url: "./action.php/"+id,
          success: function (data, status, xhr) {
 		 	$("#deleteBtn").unbind("click");
 		 	$("#deleteModal").modal('hide');
