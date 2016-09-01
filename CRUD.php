@@ -200,8 +200,8 @@
 <br><br>
 
 <!-- Delete Modal -->
-  <div class="modal fade" id="deleteModal" role="dialog">
-    <div class="modal-dialog">
+<div id="deleteModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog" role="document">
     
       <!-- Modal content-->
       <div class="modal-content">
@@ -259,12 +259,6 @@
         });		
         
 	}; /* doDelete */
-    
-    $(document).ready(function () {
-		
-		SBC.loadData();
-					
-    });
     
 </script>
 
