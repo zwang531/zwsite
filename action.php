@@ -15,7 +15,7 @@
     if ($action == 'Add' || $action == 'Update'){
         $filename = basename($_FILES["poster"]["name"]);
         if(strlen($filename) > 65){
-            $err = "Invalid inputs:<br>Upload File Name is resctircted to maximum 65 charactors!<br>";
+            $err = "Upload File Name is resctircted to maximum 65 charactors!%";
             //die($err);
         }
         if($filename != '' && $err == ''){
@@ -42,25 +42,25 @@
         
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
             //if($err != '') $err .= "<br>";
-            $err .= "Text Fields contain HTMP or PHP tags!<br>";
+            $err .= "Text Fields contain HTMP or PHP tags!%";
         }
         else{
             if(strlen($movie_title) > 65){
                 //if($err != '') $err .= "<br>";
-                $err .= "Movie Title is resctircted to maximum 65 charactors!<br>";
+                $err .= "Movie Title is resctircted to maximum 65 charactors!%";
             }
             if(strlen($studio_name) > 35){
                 //if($err != '') $err .= "<br>";
-                $err .= "Studio field is resctircted to maximum 35 charactors!<br>";
+                $err .= "Studio field is resctircted to maximum 35 charactors!%";
             }
         }
         if($year!=0 && ($year<1900 || $year>2020)){
             //if($err != '') $err .= "<br>";
-            $err .= "Year should be a integer which is in range ( 1900 - 2100 )!<br>";
+            $err .= "Year should be a integer which is in range ( 1900 - 2100 )!%";
         }
         if($dollar_value < 0){
             //if($err != '') $err .= "<br>";
-            $err .= "Box Office $ should be positive!<br>";
+            $err .= "Box Office $ should be positive!%";
         }
         /*if($err != '') {
             $err = "Invalid inputs:<br>" . $err;
@@ -88,25 +88,25 @@
         
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
             //if($err != '') $err .= "<br>";
-            $err .= "Text Fields contain HTMP or PHP tags!<br>";
+            $err .= "Text Fields contain HTMP or PHP tags!%";
         }
         else{
             if(strlen($movie_title) > 65){
                 //if($err != '') $err .= "<br>";
-                $err .= "Movie Title is resctircted to maximum 65 charactors!<br>";
+                $err .= "Movie Title is resctircted to maximum 65 charactors!%";
             }
             if(strlen($studio_name) > 35){
                 //if($err != '') $err .= "<br>";
-                $err .= "Studio field is resctircted to maximum 35 charactors!<br>";
+                $err .= "Studio field is resctircted to maximum 35 charactors!%";
             }
         }
         if($year!=0 && ($year<1900 || $year>2020)){
             //if($err != '') $err .= "<br>";
-            $err .= "Year should be a integer which is in range ( 1900 - 2100 )!<br>";
+            $err .= "Year should be a integer which is in range ( 1900 - 2100 )!%";
         }
         if($dollar_value < 0){
             //if($err != '') $err .= "<br>";
-            $err .= "Box Office $ should be positive!<br>";
+            $err .= "Box Office $ should be positive!%";
         }
         /*if($err != '') {
             $err = "Invalid inputs:<br>" . $err;
@@ -165,11 +165,11 @@
     <br><br><hr><br><br>
     <?php 
     echo($err);
-        $msg = strtok($err, '<br>');
+        $msg = strtok($err, '%');
     
         do{
             $tmp = ''.$msg;
-            $msg = strtok('<br>');
+            $msg = strtok('%');
             
             if($msg !== false){
                 print "<div class='alert alert-danger'>";
