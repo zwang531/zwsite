@@ -54,8 +54,10 @@
 	   $field = "studio_name";
         elseif($_GET['field']=="year")
 	   $field = "year";
-	elseif($_GET['field']=="dollar_value")
+	   elseif($_GET['field']=="dollar_value")
 	    $field = "dollar_value";
+        else
+	   $field = "id";
 
     }
     else
