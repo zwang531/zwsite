@@ -213,7 +213,7 @@
           <p>Do you really want to delete it permanently?</p>
         </div>
         <div class="modal-footer">
-          <form>
+          <form action="/action" method="POST">
 	  	    <input type="hidden" name="user_id" id="deleteConfirm_user_id" value="">
 	  	
 	  	    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -229,36 +229,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     
-    var SBC = {};
-    
-    SBC.confirmDelete = function confirmDelete(id) {
+    function confirmDelete(id) {
 	  $("#deleteConfirm_user_id").attr('value',id);
-	  $("#deleteBtn").click(function () {
-		  SBC.doDelete();
-	  });
 	  $('#deleteModal').modal('show');  
 	
 	}; /* confirmDelete*/
-	
-	SBC.doDelete = function doDelete() {
-		var id = $("#deleteConfirm_user_id").attr('value');
-				
-		$.ajax({
-         type: "DELETE",
-         url: "./action.php/"+id,
-         success: function (data, status, xhr) {
-		 	$("#deleteBtn").unbind("click");
-		 	$("#deleteModal").modal('hide');
-		 	SBC.loadData();
-         },
-     
-         error: function (xhr, status) {
-             // error handler
-             alert('Delete error');
-         }
-        });		
-        
-	}; /* doDelete */
     
 </script>
 
