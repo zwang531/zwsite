@@ -110,7 +110,6 @@
     }
 
     // FORM AND EXECUTE SOME QUERY
-echo("field=".$field);
     if($e != -1) $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY $field $sort LIMIT $p,$e";
     else $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY $field $sort";
 
