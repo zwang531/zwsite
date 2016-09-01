@@ -15,7 +15,7 @@
     if ($action == 'Add' || $action == 'Update'){
         $filename = basename($_FILES["poster"]["name"]);
         if(strlen($filename) > 65){
-            $err = "Invalid inputs:<br>Upload File Name is resctircted to maximum 65 charactors!";
+            $err = "Invalid inputs:<br>Upload File Name is resctircted to maximum 65 charactors!\n";
             //die($err);
         }
         if($filename != '' && $err == ''){
@@ -41,31 +41,31 @@
 	   // SHOULD HAVE VALIDATION HERE!?
         
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
-            if($err != '') $err .= "<br>";
-            $err .= "Text Fields contain HTMP or PHP tags!";
+            //if($err != '') $err .= "<br>";
+            $err .= "Text Fields contain HTMP or PHP tags!\n";
         }
         else{
             if(strlen($movie_title) > 65){
-                if($err != '') $err .= "<br>";
-                $err .= "Movie Title is resctircted to maximum 65 charactors!";
+                //if($err != '') $err .= "<br>";
+                $err .= "Movie Title is resctircted to maximum 65 charactors!\n";
             }
             if(strlen($studio_name) > 35){
-                if($err != '') $err .= "<br>";
-                $err .= "Studio field is resctircted to maximum 35 charactors!";
+                //if($err != '') $err .= "<br>";
+                $err .= "Studio field is resctircted to maximum 35 charactors!\n";
             }
         }
         if($year!=0 && ($year<1900 || $year>2020)){
-            if($err != '') $err .= "<br>";
-            $err .= "Year should be a integer which is in range ( 1900 - 2100 )!";
+            //if($err != '') $err .= "<br>";
+            $err .= "Year should be a integer which is in range ( 1900 - 2100 )!\n";
         }
         if($dollar_value < 0){
-            if($err != '') $err .= "<br>";
-            $err .= "Box Office $ should be positive!";
+            //if($err != '') $err .= "<br>";
+            $err .= "Box Office $ should be positive!\n";
         }
-        if($err != '') {
+        /*if($err != '') {
             $err = "Invalid inputs:<br>" . $err;
             //die($err);
-        }
+        }*/
         if($err == ''){
 		if ($upload == true){
             $sql = "INSERT INTO movies (movie_title,studio_name,year,dollar_value,poster) VALUES ('$movie_title' , '$studio_name' , '$year' , '$dollar_value', '$target_file')";
@@ -87,31 +87,31 @@
        $id = $_REQUEST['id'];
         
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
-            if($err != '') $err .= "<br>";
-            $err .= "Text Fields contain HTMP or PHP tags!";
+            //if($err != '') $err .= "<br>";
+            $err .= "Text Fields contain HTMP or PHP tags!\n";
         }
         else{
             if(strlen($movie_title) > 65){
-                if($err != '') $err .= "<br>";
-                $err .= "Movie Title is resctircted to maximum 65 charactors!";
+                //if($err != '') $err .= "<br>";
+                $err .= "Movie Title is resctircted to maximum 65 charactors!\n";
             }
             if(strlen($studio_name) > 35){
-                if($err != '') $err .= "<br>";
-                $err .= "Studio field is resctircted to maximum 35 charactors!";
+                //if($err != '') $err .= "<br>";
+                $err .= "Studio field is resctircted to maximum 35 charactors!\n";
             }
         }
         if($year!=0 && ($year<1900 || $year>2020)){
-            if($err != '') $err .= "<br>";
-            $err .= "Year should be a integer which is in range ( 1900 - 2100 )!";
+            //if($err != '') $err .= "<br>";
+            $err .= "Year should be a integer which is in range ( 1900 - 2100 )!\n";
         }
         if($dollar_value < 0){
-            if($err != '') $err .= "<br>";
-            $err .= "Box Office $ should be positive!";
+            //if($err != '') $err .= "<br>";
+            $err .= "Box Office $ should be positive!\n";
         }
-        if($err != '') {
+        /*if($err != '') {
             $err = "Invalid inputs:<br>" . $err;
             die($err);
-        }
+        }*/
         
         if($err == ''){        
         if ($upload == true){
@@ -161,9 +161,10 @@
 <body>
 
 <div class="container">
-
+    <h3>Alerts!</h3>
+    <br><br><hr><br><br>
     <?php 
-    
+    echo($err);
         $msg = strtok($err, '\n');
     
         do{
