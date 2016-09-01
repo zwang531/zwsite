@@ -111,7 +111,7 @@
 	    
           $tmp_id = $row['id'];
 */          
-	    print "<div class='col-sm-6'><button type='button' class='btn btn-default' onclick='SBC.confirmDelete(".$row['id'].");' data-toggle='modal' data-target='#deleteModal'>
+	    print "<div class='col-sm-6'><button type='button' class='btn btn-default' onclick='confirmDelete(".$row['id'].");' data-toggle='modal' data-target='#deleteModal'>
   <span class='glyphicon glyphicon-trash'></span></button></div>";
 
   	    print "</div></td></tr>\n";
@@ -214,7 +214,7 @@
         </div>
         <div class="modal-footer">
           <form action="/action" method="POST">
-	  	    <input type="hidden" name="id" id="deleteConfirm_user_id" value="">
+	  	    <input type="hidden" name="id" id="deleteConfirm_id">
 	  	
 	  	    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             <input type="submit" name="action" value="Delete" class="btn btn-primary">
@@ -229,7 +229,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
     function confirmDelete(id) {alert(id);
-	  $("#deleteConfirm_user_id").attr('value',id);
+	  $("#deleteConfirm_id").attr('value',id);
 	
 	}; /* confirmDelete*/
     
