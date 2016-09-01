@@ -59,7 +59,7 @@
 
     }
     else
-	$field = "id";
+	$field = "movie_title";
     
     //pagination
     $page = $entry = '';
