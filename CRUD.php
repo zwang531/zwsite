@@ -59,7 +59,7 @@
 
     }
     else
-	$field = "movie_title";
+	$field = "id";
     
     //pagination
     $page = $entry = '';
@@ -108,7 +108,7 @@
     }
 
     // FORM AND EXECUTE SOME QUERY
-
+echo($field);
     if($e != -1) $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY $field $sort LIMIT $p,$e";
     else $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY $field $sort";
 
