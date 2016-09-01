@@ -189,8 +189,8 @@
 <body>
 
 <div class="container">
-    <h3>Alerts!</h3>
-    <br><hr><br>
+    <h2>Alerts!</h2>
+    <hr>
     <?php 
 
         $msg = strtok($err, '%');
