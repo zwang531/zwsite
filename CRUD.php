@@ -115,10 +115,10 @@
     
     // USE THE QUERY RESULT 
     print "<table class='table'>";
-    print "<tr><th><a href=\"index.php?nosort=false&sorting=$sort&field=first_name&page=$current_page&entry=$e\">First Name</a></th>
-	   <th><a href=\"index.php?nosort=false&sorting=$sort&field=last_name&page=$current_page&entry=$e\">Last Name</a></th>
-	   <th><a href=\"index.php?nosort=false&sorting=$sort&field=login&page=$current_page&entry=$e\">Login</a></th>
-	   <th><a href=\"index.php?nosort=false&sorting=$sort&field=password&page=$current_page&entry=$e\">Password</a></th><th></th></tr>";  
+    print "<tr><th><a href=\"CRUD?nosort=false&sorting=$sort&field=first_name&page=$current_page&entry=$e\">First Name</a></th>
+	   <th><a href=\"CRUD?nosort=false&sorting=$sort&field=last_name&page=$current_page&entry=$e\">Last Name</a></th>
+	   <th><a href=\"CRUD?nosort=false&sorting=$sort&field=login&page=$current_page&entry=$e\">Login</a></th>
+	   <th><a href=\"CRUD?nosort=false&sorting=$sort&field=password&page=$current_page&entry=$e\">Password</a></th><th></th></tr>";  
     
     $tmp_id = '';
     
@@ -185,9 +185,9 @@
 	    for($i=1;$i<=$max_page;$i++)
 	    {
 		if($i == $current_page)
-		    print "<li class=\"page-item disabled\"><a class=\"page-link\" href=\"index.php?nosort=true&sorting=$sort&field=$field&page=$i&entry=$e\">$i</a></li>\n";
+		    print "<li class=\"page-item disabled\"><a class=\"page-link\" href=\"CRUD?nosort=true&sorting=$sort&field=$field&page=$i&entry=$e\">$i</a></li>\n";
 		else
-		    print "<li class=\"page-item\"><a class=\"page-link\" href=\"index.php?nosort=true&sorting=$sort&field=$field&page=$i&entry=$e\">$i</a></li>\n";
+		    print "<li class=\"page-item\"><a class=\"page-link\" href=\"CRUD?nosort=true&sorting=$sort&field=$field&page=$i&entry=$e\">$i</a></li>\n";
 	    }
 	?>
         <li>
@@ -226,10 +226,10 @@
     <div class="dropdown">
 	<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Entries per View <span class="caret"></span></button>
 	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?sorting=<?php echo $sort; ?>&field=<?php echo $field; ?>&nosort=true&entry=5">5</a></li>
-	    <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?sorting=<?php echo $sort; ?>&field=<?php echo $field; ?>&nosort=true&entry=10">10</a></li>
-	    <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?sorting=<?php echo $sort; ?>&field=<?php echo $field; ?>&nosort=true&entry=20">20</a></li>
-	    <li role="presentation"><a role="menuitem" tabindex="-1" href="index.php?sorting=<?php echo $sort; ?>&field=<?php echo $field; ?>&nosort=true&entry=all">All</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD?sorting=<?php echo $sort; ?>&field=<?php echo $field; ?>&nosort=true&entry=5">5</a></li>
+	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD?sorting=<?php echo $sort; ?>&field=<?php echo $field; ?>&nosort=true&entry=10">10</a></li>
+	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD?sorting=<?php echo $sort; ?>&field=<?php echo $field; ?>&nosort=true&entry=20">20</a></li>
+	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD?sorting=<?php echo $sort; ?>&field=<?php echo $field; ?>&nosort=true&entry=all">All</a></li>
 	</ul>
     </div>
    
