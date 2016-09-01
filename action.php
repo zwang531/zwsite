@@ -15,6 +15,7 @@
     if(isset($_SERVER['REQUEST_METHOD'])){
         $method = $_SERVER['REQUEST_METHOD'];
         $request = $_SERVER['REQUEST_URI'];
+        $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
         $key = array_shift($request)+0;
     }
     if($method != '' && $method == 'DELETE'){

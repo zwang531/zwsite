@@ -244,7 +244,7 @@
 				
 		$.ajax({
          type: "DELETE",
-         url: "./action/"+id,
+         url: "./action.php/"+id,
          success: function (data, status, xhr) {
 		 	$("#deleteBtn").unbind("click");
 		 	$("#deleteModal").modal('hide');
