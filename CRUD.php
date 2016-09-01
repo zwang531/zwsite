@@ -234,7 +234,7 @@
 	  $("#deleteConfirm_user_id").attr('value',id);
 	  $("#deleteBtn").click(function () {
 		  SBC.doDelete();
-	  })
+	  });
 	  $('#deleteModal').modal('show');  
 	
 	}; /* confirmDelete*/
