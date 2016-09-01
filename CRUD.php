@@ -22,9 +22,9 @@
     require_once 'config.inc';
 
     if(isset($_GET['nosort']))
-	$nosort = $_GET['nosort'];
+	   $nosort = $_GET['nosort'];
     else
-	$nosort = "false";
+	   $nosort = "false";
 	
 
     if(isset($_GET['sorting']))
@@ -41,7 +41,7 @@
 	    $sort = $_GET['sorting'];
     }
     else
-	$sort = "ASC";
+	   $sort = "ASC";
 	
 
     if(isset($_GET['field']))
@@ -94,14 +94,14 @@
     else
     {	
 	   if(intval($page) > $max_page || intval($page) < 1)
-       {    $p = 0;
-            $page = "1";
-            $current_page = 1;
+       {
+            $p = ($max_page * $e) - $e; 
+           $current_page = $max_page;
        }
        else
        {
            $p = ($page * $e) - $e; 
-           $current_page = 1;
+           $current_page = intval($page);
        }   
     }
 
