@@ -183,11 +183,11 @@
 	    <li role="presentation"><a role="menuitem" tabindex="-1" href="CRUD.php?entry=all">All</a></li>
 	</ul>
     </div>
-    
+<!--    
 <br><br>
 <hr>
 <br><br>
-
+-->
 <!-- Delete Modal -->
 <div id="deleteModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
     <div class="modal-dialog" role="document">
@@ -224,6 +224,7 @@
     
 </script>
 
+<!--
 <div class="alert alert-danger" role="alert">
 	<h2>Things Missing</h2>
 	
@@ -236,7 +237,7 @@
 		<li>Little code improvements</li>
 	</ol>
 </div>
-
+-->
 </div>
 
 </body>
