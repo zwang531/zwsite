@@ -48,18 +48,18 @@
 
     if(isset($_GET['field']))
     {
-        if($_GET['field']=="last_name")
-	   $field = "last_name";
-        elseif($_GET['field']=="login")
-	   $field = "login";
-        elseif($_GET['field']=="password")
-	   $field = "password";
-	elseif($_GET['field']=="first_name")
-	    $field = "first_name";
+        if($_GET['field']=="movie_title")
+	   $field = "movie_title";
+        elseif($_GET['field']=="studio_name")
+	   $field = "studio_name";
+        elseif($_GET['field']=="year")
+	   $field = "year";
+	elseif($_GET['field']=="dollar_value")
+	    $field = "dollar_value";
 
     }
     else
-	$field = "first_name";
+	$field = "id";
     
     //pagination
     $page = $entry = '';
@@ -111,7 +111,7 @@
 
     if($e != -1) $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY $field $sort LIMIT $p,$e";
     else $sql = "SELECT id, poster, movie_title, studio_name, year, dollar_value FROM movies ORDER BY $field $sort";
-echo($sql);
+
     // FORM AND EXECUTE SOME QUERY
     $result = mysqli_query($conn, $sql);
     
