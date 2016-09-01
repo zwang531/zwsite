@@ -113,8 +113,8 @@
 	    
           $tmp_id = $row['id'];
 */          
-	    print "<div class='col-sm-6'><div class='form-group'><button type='submit' class='btn btn-default' name='action' value=delete' data-toggle='modal' data-target='#deleteModal'>
-  <span class='glyphicon glyphicon-trash'></span></button></div></div>";
+	    print "<div class='col-sm-6'><button type='button' class='btn btn-default' onclick='SBC.confirmDelete(".$row['id'].");' name='action' value=delete' data-toggle='modal' data-target='#deleteModal'>
+  <span class='glyphicon glyphicon-trash'></span></button></div>";
 
   	    print "</div></td></tr>\n";
 
