@@ -40,6 +40,20 @@
 	   
 	   // SHOULD HAVE VALIDATION HERE!?
         
+        if($movie_title != strip_tags($movie_title)){
+            $err .= "Movie Title contains HTMP or PHP tags!%";
+        }
+        else if(strlen($movie_title) > 65){
+            $err .= "Movie Title is resctircted to maximum 65 charactors!%";
+        }
+        
+        if($studio_name != strip_tags($studio_name)){
+            $err .= "Studio field contains HTMP or PHP tags!%";
+        }
+        else if(strlen($studio_name) > 35){
+            $err .= "Studio field is resctircted to maximum 35 charactors!%";
+        }
+        /*
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
             //if($err != '') $err .= "<br>";
             $err .= "Text Fields contain HTMP or PHP tags!%";
@@ -53,7 +67,7 @@
                 //if($err != '') $err .= "<br>";
                 $err .= "Studio field is resctircted to maximum 35 charactors!%";
             }
-        }
+        }*/
         if($year!=0 && ($year<1900 || $year>2020)){
             //if($err != '') $err .= "<br>";
             $err .= "Year should be a integer which is in range ( 1900 - 2100 )!%";
@@ -86,6 +100,20 @@
         
        $id = $_REQUEST['id'];
         
+        if($movie_title != strip_tags($movie_title)){
+            $err .= "Movie Title contains HTMP or PHP tags!%";
+        }
+        else if(strlen($movie_title) > 65){
+            $err .= "Movie Title is resctircted to maximum 65 charactors!%";
+        }
+        
+        if($studio_name != strip_tags($studio_name)){
+            $err .= "Studio field contains HTMP or PHP tags!%";
+        }
+        else if(strlen($studio_name) > 35){
+            $err .= "Studio field is resctircted to maximum 35 charactors!%";
+        }
+        /*
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
             //if($err != '') $err .= "<br>";
             $err .= "Text Fields contain HTMP or PHP tags!%";
@@ -99,7 +127,7 @@
                 //if($err != '') $err .= "<br>";
                 $err .= "Studio field is resctircted to maximum 35 charactors!%";
             }
-        }
+        }*/
         if($year!=0 && ($year<1900 || $year>2020)){
             //if($err != '') $err .= "<br>";
             $err .= "Year should be a integer which is in range ( 1900 - 2100 )!%";
@@ -162,9 +190,9 @@
 
 <div class="container">
     <h3>Alerts!</h3>
-    <br><br><hr><br><br>
+    <br><hr><br>
     <?php 
-    echo($err);
+
         $msg = strtok($err, '%');
     
         do{
