@@ -214,7 +214,7 @@
         </div>
         <div class="modal-footer">
           <form action="/action" method="POST">
-	  	    <input type="hidden" name="user_id" id="deleteConfirm_user_id" value="">
+	  	    <input type="hidden" name="id" id="deleteConfirm_user_id" value="">
 	  	
 	  	    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             <input type="submit" name="action" value="Delete" class="btn btn-primary">
