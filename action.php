@@ -41,7 +41,7 @@
 	   // SHOULD HAVE VALIDATION HERE!?
         
         if($movie_title != strip_tags($movie_title)){
-            $err .= "Movie Title contains HTMP or PHP tags!%";
+            $err .= "Movie Title contains HTML or PHP tags!%";
         }
         else if(strlen($movie_title) > 65){
             $err .= "Movie Title is resctircted to maximum 65 charactors!%";
@@ -51,13 +51,20 @@
         }
         
         if($studio_name != strip_tags($studio_name)){
-            $err .= "Studio field contains HTMP or PHP tags!%";
+            $err .= "Studio field contains HTML or PHP tags!%";
         }
         else if(strlen($studio_name) > 35){
             $err .= "Studio field is resctircted to maximum 35 charactors!%";
         }
         else if(strlen($studio_name) == 0){
             $err .= "Studio field cannot be null!%";
+        }
+        
+        if(strpos($movie_title, "onclick")!==false && strpos($movie_title, "=")!==false){
+            $err .= "Input for Movie Title is invalid!";
+        }
+        if(strpos($studio_name, "onclick")!==false && strpos($studio_name, "=")!==false){
+            $err .= "Input in Studio field is invalid!";
         }
         /*
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
@@ -107,7 +114,7 @@
        $id = $_REQUEST['id'];
         
         if($movie_title != strip_tags($movie_title)){
-            $err .= "Movie Title contains HTMP or PHP tags!%";
+            $err .= "Movie Title contains HTML or PHP tags!%";
         }
         else if(strlen($movie_title) > 65){
             $err .= "Movie Title is resctircted to maximum 65 charactors!%";
@@ -117,13 +124,20 @@
         }
         
         if($studio_name != strip_tags($studio_name)){
-            $err .= "Studio field contains HTMP or PHP tags!%";
+            $err .= "Studio field contains HTML or PHP tags!%";
         }
         else if(strlen($studio_name) > 35){
             $err .= "Studio field is resctircted to maximum 35 charactors!%";
         }
         else if(strlen($studio_name) == 0){
             $err .= "Studio field cannot be null!%";
+        }
+        
+        if(strpos($movie_title, "onclick")!==false && strpos($movie_title, "=")!==false){
+            $err .= "Input for Movie Title is invalid!";
+        }
+        if(strpos($studio_name, "onclick")!==false && strpos($studio_name, "=")!==false){
+            $err .= "Input in Studio field is invalid!";
         }
         /*
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
