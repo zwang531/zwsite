@@ -134,10 +134,10 @@
         }
         
         if(strpos($movie_title, "onclick")!==false && strpos($movie_title, "=")!==false){
-            $err .= "Input for Movie Title is invalid!";
+            $err .= "Input for movie title is invalid!";
         }
         if(strpos($studio_name, "onclick")!==false && strpos($studio_name, "=")!==false){
-            $err .= "Input in Studio field is invalid!";
+            $err .= "Input in studio field is invalid!";
         }
         /*
         if($movie_title != strip_tags($movie_title) || $studio_name != strip_tags($studio_name)){
